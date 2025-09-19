@@ -140,7 +140,8 @@ sudo apt install nginx
 
 * Open file: `vim file.txt`
 * Enter insert mode: `i`
-* Save & exit: `Esc + :wq + Enter`
+* Save & exit: `Esc + :wq + Enter` may not overrites the content of protected file like /etc/sudoers
+* Save & exit + overrites protected file : `Esc + :wq! + Enter`
 * Quit without saving: `Esc + :q! + Enter`
 
 ---
