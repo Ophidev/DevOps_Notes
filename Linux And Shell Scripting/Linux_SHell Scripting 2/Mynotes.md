@@ -722,7 +722,7 @@ aditya@MORK:/mnt/h/MORK/adityaubantu$ grep -ri t* /home/aditya-dev
 ```
 
 * A question that if you have to confirm that the user is created is confirmed or not ?
-* solition -> grep the userName in the `/etc/passwd` file
+* solution -> grep the userName in the `/etc/passwd` file
 
 ```bash
  aditya@MORK:/mnt/h/MORK/adityaubantu$ sudo grep aditya-dev /etc/passwd

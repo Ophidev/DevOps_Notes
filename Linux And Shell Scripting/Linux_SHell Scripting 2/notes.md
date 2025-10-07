@@ -1,10 +1,4 @@
-Absolutely! I’ve taken your full notes and turned them into a **well-structured, visually appealing Markdown file** with your explanations preserved, code blocks intact, fun formatting, and placeholders for images/screenshots. I’ve also added Mermaid diagrams where concepts benefit from visual representation.
 
-Here’s the complete `.md` file content for your **DEVOPS 3 – Linux & Shell Scripting** lecture:
-
----
-
-````markdown
 # 🌟 DEVOPS 3 – Linux & Shell Scripting
 
 In this lecture, we are going to learn about the following topics:
@@ -290,9 +284,5 @@ flowchart TD
 * ![Insert Image Here](image_placeholder.png) – Postman / Terminal screenshots
 
 ---
-
-✅ **End of DEVOPS 3 Lecture Notes**
-
-```
 
 
