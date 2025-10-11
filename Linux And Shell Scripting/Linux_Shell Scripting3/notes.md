@@ -232,7 +232,7 @@ else
   echo "$1 does not exist"
 fi
 
-echo "Total arguments: $#"
+echo "Total number of arguments: $#"
 echo "All arguments: $@"
 ```
 
@@ -277,6 +277,11 @@ The available RAM is:
 | Daemon        | Background process/service        |
 | .service File | Defines how a daemon runs         |
 | Shell Script  | Automation using Linux commands   |
+| uptime        | get how many users are active now |
+| who -H        | names of the user active now      |
+| top           | show background process of cpu    |
+| top -b        | list background process of cpu    |
+| top -b|head   | list top background process       |
 
 💡 **Key Takeaways:**
 
@@ -284,3 +289,9 @@ The available RAM is:
 * Use `enable` to start services automatically.
 * Shell scripting automates daily Linux tasks.
 * Daemons = background processes managed by systemd.
+
+## ASSIGNMENT 1 SHELL SCRIPT FILE
+![alt text](image1.png)
+
+### OUTPUT OF ASSIGNMENT 1 SCRIPT FILE
+![alt text](image2.png)
