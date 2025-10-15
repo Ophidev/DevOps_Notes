@@ -142,15 +142,19 @@ git remote set-url origin https://<YOUR_TOKEN>@github.com/<USERNAME>/<REPO_NAME>
 | **Clone** | Copy of repo on your **local machine**. Work locally and push changes. |
 
 ### 🔄 Upstream vs Downstream
-
-```mermaid
-flowchart TD
-A[🌊 Original Repo (Upstream)] -->|Pull updates| B[Your Fork on GitHub]
-B -->|Push changes| C[💻 Your Local Clone]
+```
+💻 Your Local Clone
+       │
+       ▼ Push changes
+   Your Fork on GitHub
+       │
+       ▼ Pull Request
+🌊 Original Repo (Downstream for author)
 ```
 
 > ⚡ Upstream = source of truth, keep your fork updated from here.
 
+![alt text](UpStream_DownStream_Git.png)
 ---
 
 ## 🌿 Git Branch – Visual Guide
@@ -238,10 +242,6 @@ E --> F[🏠 main branch]
 > 💻 Develop → 🧪 Test → 🚀 Deploy
 
 ---
-
-## 📸 Images / Screenshots
-
-* ![Insert Image Here](image_placeholder.png)  <!-- for Postman APK or other slides screenshots -->
 
 ---
 
