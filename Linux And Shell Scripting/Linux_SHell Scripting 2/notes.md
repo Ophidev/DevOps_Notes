@@ -221,6 +221,11 @@ sudo grep aditya-dev /etc/passwd
 ```bash
 # Example: find files with 777 permissions
 find /home -type f -perm 777
+
+# Example : Find files ending with .log:**
+
+find /home -type f -name "*.log"
+
 ```
 
 * Useful for locating files quickly.
