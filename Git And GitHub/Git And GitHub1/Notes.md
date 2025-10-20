@@ -46,6 +46,21 @@
 
 ## 🛠 Setting Up Git
 
+### 0 Git install for windows
+
+```bash
+install git bash it will install git with bash for you
+which is a CLI 
+```
+
+### 0.1 Add your Auther name  (GITHUB account)
+
+```bash
+git config --global user.name "yourUserName"
+git config --global user.email "yourUserEmail"
+git config --list -> FOR CHECKING CONFIG
+```
+
 ### 1️⃣ Make a folder a Git repository
 
 ```bash
@@ -119,9 +134,14 @@ git clone <HTTPS_LINK>
 git status
 git add .
 git commit -m "message..."
+git branch #checking the names of the branches
+git branch -M main #changing the name of default branch to main
 git remote add origin <REMOTE_URL>  # link local repo to GitHub
 git remote -v                       # verify remote URL
-git push origin <branch_name>
+git push origin <branch_name> #push branch data to remote origin
+if ERROR 
+git pull --rebase origin main #getting all the update commits in the local of main branch to handle conflict
+git push origin <branch_Name>
 ```
 
 ### 6️⃣ GitHub Access Token
