@@ -1,5 +1,4 @@
 
-```markdown
 # 🔄 Git Rebase — Complete Guide
 
 Rebase is a powerful Git command that lets you **move commits from one branch on top of another branch**, creating a **linear, clean history**.  

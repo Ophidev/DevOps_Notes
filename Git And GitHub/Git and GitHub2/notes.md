@@ -1,7 +1,24 @@
 
 # 🌟 DevOps 07 — Git & GitHub (Part 2)
-### 🚀 Advanced Git Topics  
-> _Branching • Restore • Revert • Reset • Cherry-pick • Conflict Resolve • Merge vs Rebase • Squash Commit_
+
+### 🚀 Advanced Git Topics 
+  
+   •_Branching
+
+   • Restore
+
+   • Revert
+
+   • Reset
+
+   • Cherry-pick
+
+   • Conflict Resolve
+
+   • Merge vs Rebase
+
+   • Squash Commit_
+
 
 ---
 
@@ -54,7 +71,7 @@ Undo changes in working directory (like **Ctrl + Z before commit**).
 
 Scenario:
 
-> You edited files but didn’t commit yet, and now you want to discard changes.
+> You edited files and add . but didn’t commit yet, and now you want to discard changes.
 
 ```bash
 git restore <fileName>
@@ -89,6 +106,7 @@ git revert <commit-hash>
 ### 🧹 `git reset`
 
 Goes back to a previous commit (removes commits after it).
+basically it reset your branch
 
 ```bash
 git reset --soft <commit-hash>
