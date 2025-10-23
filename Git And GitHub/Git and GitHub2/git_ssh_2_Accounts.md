@@ -11,6 +11,7 @@ A complete guide to using **two GitHub accounts** on the same PC using **HTTPS f
 * Use **Account A** (default/global) with HTTPS
 * Use **Account B** (secondary) with SSH
 * Push and pull without conflicts or changing global config
+* Handle errors like `Permission denied (publickey)` and `unrelated histories`
 
 ---
 
@@ -119,46 +120,115 @@ git config user.email "bhattadi60@gmail.com"
 
 ---
 
-## 🌀 Workflow Diagram
+## ⚡ Step 6: Pushing Existing Local Project to Second Account
 
-```mermaid
-flowchart LR
-    A[Default Account (HTTPS)] -->|Clone/Pull/Push| RepoA[Repo A]
-    B[Second Account (SSH)] -->|Clone/Pull/Push| RepoB[Repo B]
-    RepoA -->|Global Git Config| Git[Git]
-    RepoB -->|Local Git Config + SSH Key| Git
+If you already have a local project and want to push it to Account B:
+
+1. **Set local Git config** in your project folder:
+
+```powershell
+cd path\to\your\project
+git init  # if not already a Git repo
+git config user.name "Aditya Bhatt"
+git config user.email "bhattadi60@gmail.com"
+```
+
+2. **Add the remote using SSH alias**:
+
+```powershell
+git remote add origin git@github-second:AdityaBhatt37/repo-name.git
+```
+
+* If a remote already exists:
+
+```powershell
+git remote set-url origin git@github-second:AdityaBhatt37/repo-name.git
+```
+
+3. **Add and commit files**:
+
+```powershell
+git add .
+git commit -m "Initial commit"
+```
+
+4. **Push to GitHub**:
+
+```powershell
+git push -u origin main
 ```
 
 ---
 
-## 💡 Notes & Tips
+## ⚠️ Handling Errors
 
-* Account A continues using **HTTPS**, no SSH needed.
-* Account B uses **SSH with alias** in `config`.
-* Use **local Git config** for Account B repos to override global settings.
-* You can store SSH keys on any drive (`H:` in this example).
-* Always keep private keys safe!
+### 1️⃣ Permission denied (publickey)
+
+* Happens if remote is `git@github.com:` and no SSH key is configured for Account A.
+* **Solution:** Use your **SSH alias** (`git@github-second:`) for Account B.
+
+### 2️⃣ Non-fast-forward / Remote has commits
+
+* Error:
+
+```
+! [rejected] main -> main (non-fast-forward)
+```
+
+* **Solution:** Pull remote changes first and merge:
+
+```powershell
+git pull origin main --allow-unrelated-histories
+```
+
+* `--allow-unrelated-histories` → Allows merging two repos that started independently (local & remote)
+* Resolve any merge conflicts, then commit
+
+```powershell
+git add .
+git commit -m "Merge remote changes"
+```
+
+### 3️⃣ Push after merging
+
+```powershell
+git push -u origin main
+```
+
+* Should succeed now
+* Future pushes will be normal
 
 ---
 
-## 📌 Command Summary
+## 🌀 Workflow Diagram
 
-| Command                                      | Purpose                    | Notes                                       |
-| -------------------------------------------- | -------------------------- | ------------------------------------------- |
-| `ssh-keygen -t ed25519 -C "email" -f <path>` | Generate SSH key           | `-t` type, `-C` comment, `-f` path+filename |
-| `type <key.pub>`                             | Show public key            | Copy to GitHub                              |
-| `ssh-add <private_key>`                      | Add key to SSH agent       | Optional, auto-used if in config            |
-| `ssh -T git@github-second`                   | Test SSH connection        | Should authenticate Account B               |
-| `git clone https://github.com/...`           | Clone default account repo | Uses HTTPS                                  |
-| `git clone git@github-second:...`            | Clone second account repo  | Uses SSH + config alias                     |
-| `git config user.name/email`                 | Set local Git user         | Overrides global config per repo            |
+```mermaid
+flowchart LR
+    LocalProject[Local Project] -->|git push| RepoB[GitHub Account B Repo]
+    RepoB -->|git pull| LocalProject
+    LocalProject -->|git commit| LocalProject
+```
+
+---
+
+## 📌 Command Summary with Explanations
+
+| Command                                            | Purpose                                                   | Notes                                         |
+| -------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------- |
+| `git init`                                         | Initialize Git repo                                       | Only if repo doesn’t exist locally            |
+| `git config user.name/email`                       | Set local Git user                                        | Overrides global config per repo              |
+| `git remote add origin <url>`                      | Add remote repo                                           | Use SSH alias for Account B                   |
+| `git remote set-url origin <url>`                  | Update remote URL                                         | Use SSH alias for Account B                   |
+| `git add .`                                        | Stage files                                               | All files ready for commit                    |
+| `git commit -m "msg"`                              | Commit files                                              | Local commit with message                     |
+| `git pull origin main --allow-unrelated-histories` | Merge remote with local repo ignoring unrelated histories | Useful for new repo vs existing local project |
+| `git push -u origin main`                          | Push commits to GitHub                                    | Sets upstream tracking                        |
 
 ---
 
 ## 🎉 Result
 
-* **Account A** → HTTPS, global config
-* **Account B** → SSH, alias `github-second`, local config per repo
-* Both coexist seamlessly on the same PC!
-
-
+* Local projects can now be pushed to **Account B** using SSH
+* Errors like **Permission denied** and **unrelated histories** are handled
+* Account A continues on HTTPS with global config
+* Both accounts coexist seamlessly on the same PC
