@@ -111,7 +111,9 @@ graph TD
 ### 🧱 Dockerfile → Image → Container Flow
 
 1️⃣ **Dockerfile** — Script defining app setup (OS, dependencies, etc.)
+
 2️⃣ **Image** — Built from Dockerfile; blueprint for containers
+
 3️⃣ **Container** — Running instance of an image
 
 ---
