@@ -209,15 +209,33 @@ djangorestframework==3.11.0
 ```dockerfile
 FROM python:3.9
 
-COPY . .
+WORKDIR app
+
+COPY . /app
 
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# about CMD command how to make -:
+# CMD executes the main container process. In exec form, each item inside the list is a separate argument of the command that Docker will run. This Docker CMD is equivalent to running python manage.py runserver 0.0.0.0:8000 inside the container.
+# "0.0.0.0:8000" -> 0.0.0.0 - exposing the container IP along port number 8000
+
 ```
 
+---
+
+| Command                                                    | Meaning (Easy Explanation)                                                                                                                                                             |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `FROM python:3.9`                                          | **FROM** → Uses the Python 3.9 base image to build your container (like starting point).                                                                                               |
+| `WORKDIR app`                                              | **WORKDIR** → Sets the working directory inside the container where your project files will live and commands will run. It creates the folder if it doesn’t exist.                     |
+| `COPY . /app`                                              | **COPY . /app** → Copies everything from your current project folder (where Dockerfile exists) into `/app` directory inside the container.                                             |
+| `RUN pip install -r requirements.txt`                      | **RUN** → Executes commands while the **image** is being built. Here, it installs all Python packages from `requirements.txt` into the image.                                          |
+| `EXPOSE 8000`                                              | **EXPOSE** → Tells Docker that this container will use port **8000**, so it can be mapped to the outside environment. (It does *not* actually publish it — `docker run -p` does that.) |
+| `CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]` | **CMD** → Runs commands when the container starts. Here it starts the Django server and makes it accessible to all network interfaces (`0.0.0.0`).                                     |
+
+---
 #### Step 3: Build Image
 
 ```bash
@@ -375,3 +393,4 @@ C --> F[Docker Hub]
 > 🏁 *Docker simplifies development, testing, and deployment — making “it works on my machine” a thing of the past.*
 
 ```
+
