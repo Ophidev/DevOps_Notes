@@ -249,7 +249,7 @@ docker exec -it demo sh -c "echo 'hello' > /data/test.txt"
 
 **When to use Compose?**
 
-* Multiple services that must run together (web, db, cache).
+* Multiple services that must run together (frontend,backend, Db).
 * Easier `up`, `down`, networking and shared volumes.
 
 ### Basic `docker-compose.yaml`
