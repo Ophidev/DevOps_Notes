@@ -1,4 +1,4 @@
-# 🐳 DevOps Day 11 — Docker (Expanded & Detailed)
+# 🐳 DevOps 11 — Docker (Expanded & Detailed)
 
 > Complete, corrected notes with examples, diagrams, troubleshooting and tips.
 
