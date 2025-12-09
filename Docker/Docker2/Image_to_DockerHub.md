@@ -1,4 +1,3 @@
-Of course! Here’s a clean and concise **Markdown (.md)** file with everything you’ve learned so far about pushing Docker images to Docker Hub ✅
 
 ---
 

@@ -203,6 +203,10 @@ docker swarm leave --force
 docker rm -f manager worker1 worker2
 ```
 
+## about .dockerignore file
+ - you can create .dockerignore file in the project before creation of image
+ - similar like .gitignore file you have to add the files here which is
+ - not used in the image building this will hlep you to reduce the size of image.
 ---
 
 ## 📝 Key Takeaways
