@@ -111,7 +111,7 @@ When creating a branch:
 Use this prompt when generating a PR description through ChatGPT:
 
 ```
-Generate a clean and simple Pull Request description in Markdown using the following format:
+Generate a clean and simple Pull Request description in .md notation using the following format:
 
 ## PR Description
 
