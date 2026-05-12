@@ -185,11 +185,6 @@ cat /etc/os-release
 
 ## 🏗️ Linux Architecture
 
-```mermaid
-graph TD
-    A[Applications 👨‍💻] --> B[Shell 🐚]
-    B --> C[Kernel ❤️]
-    C --> D[Hardware 💻]
 ````
 ![alt text](image.png)
 
