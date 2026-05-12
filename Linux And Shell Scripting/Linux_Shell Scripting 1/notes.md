@@ -367,6 +367,9 @@ drwxr-xr-x  2 aditya devs  4096 Sep 16 12:00 myfolder
 ### Breakdown:
 
 * `d` → directory (`-` = file, `l` = symlink)
+* `r` → directory/file read permissions
+* `w` → directory/file write permissions
+* `x` → directory/file execute permissions
 * `rwx` → User (owner) permissions
 * `r-x` → Group permissions
 * `r-x` → Others permissions
