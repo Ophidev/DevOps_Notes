@@ -88,6 +88,21 @@ In DevOps, Linux is the **foundation for most automation, servers, and container
 > **A:** “Linux is an open-source, Unix-like operating system built around the Linux kernel.  
 > It’s widely used in DevOps environments for automation, CI/CD pipelines, and cloud deployments because it’s stable, secure, and highly customizable.”
 
+## 💬 Common Interview Answer
+
+# What is Shell and Common Types of Shell
+
+> A shell is a command-line interpreter that acts as an interface between the user and the operating system kernel, allowing users to execute commands and interact with the system.
+
+| Shell | Full Form | Description |
+|---|---|---|
+| `sh` | Bourne Shell | Original Unix shell used for basic scripting. |
+| `bash` | Bourne Again Shell | Most popular Linux shell used for scripting and automation. |
+| `zsh` | Z Shell | Advanced shell with better customization and autocomplete features. |
+| `ksh` | Korn Shell | Powerful shell mainly used in enterprise Unix systems. |
+| `fish` | Friendly Interactive Shell | User-friendly shell with smart suggestions and syntax highlighting. |
+
+
 ---
 
 ### 🔍 If Asked Technically
