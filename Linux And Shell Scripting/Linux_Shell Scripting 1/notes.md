@@ -405,6 +405,66 @@ So: `drwxr-xr-x` = **755**
 
 ---
 
+## 🧠 Shortcut Trick to Remember Linux Permissions
+
+The easiest way to remember Linux permissions is:
+
+| Permission | Value |
+| ---------- | ----- |
+| `r` (read) | 4 |
+| `w` (write) | 2 |
+| `x` (execute) | 1 |
+
+Always remember the order:
+
+```bash
+r w x
+4 2 1
+```
+
+Now simply **add the numbers**.
+
+### Examples
+
+| Permission | Calculation | Number |
+| ---------- | ------------ | ------ |
+| `rwx` | 4 + 2 + 1 | 7 |
+| `rw-` | 4 + 2 | 6 |
+| `r-x` | 4 + 1 | 5 |
+| `r--` | 4 | 4 |
+| `-wx` | 2 + 1 | 3 |
+| `-w-` | 2 | 2 |
+| `--x` | 1 | 1 |
+| `---` | 0 | 0 |
+
+### Example
+
+```bash
+drwxr-xr-x
+```
+
+Breakdown:
+
+* `rwx` → 7
+* `r-x` → 5
+* `r-x` → 5
+
+So:
+
+```bash
+755
+```
+
+### Memory Trick
+
+Think:
+
+* `r` = biggest permission → `4`
+* `w` = medium permission → `2`
+* `x` = smallest permission → `1`
+
+Then just add the values.
+
 ## 🛠️ System Update & Software
 
 * Update system:
