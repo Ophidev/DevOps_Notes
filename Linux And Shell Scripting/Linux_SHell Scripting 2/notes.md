@@ -853,6 +853,8 @@ Linux security is mainly built around:
 
 ## 📝 5️⃣ ACL (Access Control List)
 
+* ACL (Access Control List) is an advanced permission system in Linux used to give specific permissions to specific users or groups on files/directories without changing ownership or traditional chmod permissions.
+
 ### Installing ACL
 
 ```bash
