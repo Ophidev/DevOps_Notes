@@ -629,6 +629,7 @@ Always use:
 
 ```text
 -aG
+- G stands for supplementary groups which means secondary groups, means add user/ modify user and add in extra group and don't touch the primary group.
 ```
 
 ---
