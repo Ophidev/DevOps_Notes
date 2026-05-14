@@ -88,6 +88,21 @@ In DevOps, Linux is the **foundation for most automation, servers, and container
 > **A:** “Linux is an open-source, Unix-like operating system built around the Linux kernel.  
 > It’s widely used in DevOps environments for automation, CI/CD pipelines, and cloud deployments because it’s stable, secure, and highly customizable.”
 
+## 💬 Common Interview Answer
+
+# What is Shell and Common Types of Shell
+
+> A shell is a command-line interpreter that acts as an interface between the user and the operating system kernel, allowing users to execute commands and interact with the system.
+
+| Shell | Full Form | Description |
+|---|---|---|
+| `sh` | Bourne Shell | Original Unix shell used for basic scripting. |
+| `bash` | Bourne Again Shell | Most popular Linux shell used for scripting and automation. |
+| `zsh` | Z Shell | Advanced shell with better customization and autocomplete features. |
+| `ksh` | Korn Shell | Powerful shell mainly used in enterprise Unix systems. |
+| `fish` | Friendly Interactive Shell | User-friendly shell with smart suggestions and syntax highlighting. |
+
+
 ---
 
 ### 🔍 If Asked Technically
@@ -170,11 +185,6 @@ cat /etc/os-release
 
 ## 🏗️ Linux Architecture
 
-```mermaid
-graph TD
-    A[Applications 👨‍💻] --> B[Shell 🐚]
-    B --> C[Kernel ❤️]
-    C --> D[Hardware 💻]
 ````
 ![alt text](image.png)
 
@@ -367,6 +377,9 @@ drwxr-xr-x  2 aditya devs  4096 Sep 16 12:00 myfolder
 ### Breakdown:
 
 * `d` → directory (`-` = file, `l` = symlink)
+* `r` → directory/file read permissions
+* `w` → directory/file write permissions
+* `x` → directory/file execute permissions
 * `rwx` → User (owner) permissions
 * `r-x` → Group permissions
 * `r-x` → Others permissions
@@ -386,6 +399,66 @@ drwxr-xr-x  2 aditya devs  4096 Sep 16 12:00 myfolder
 So: `drwxr-xr-x` = **755**
 
 ---
+
+## 🧠 Shortcut Trick to Remember Linux Permissions
+
+The easiest way to remember Linux permissions is:
+
+| Permission | Value |
+| ---------- | ----- |
+| `r` (read) | 4 |
+| `w` (write) | 2 |
+| `x` (execute) | 1 |
+
+Always remember the order:
+
+```bash
+r w x
+4 2 1
+```
+
+Now simply **add the numbers**.
+
+### Examples
+
+| Permission | Calculation | Number |
+| ---------- | ------------ | ------ |
+| `rwx` | 4 + 2 + 1 | 7 |
+| `rw-` | 4 + 2 | 6 |
+| `r-x` | 4 + 1 | 5 |
+| `r--` | 4 | 4 |
+| `-wx` | 2 + 1 | 3 |
+| `-w-` | 2 | 2 |
+| `--x` | 1 | 1 |
+| `---` | 0 | 0 |
+
+### Example
+
+```bash
+drwxr-xr-x
+```
+
+Breakdown:
+
+* `rwx` → 7
+* `r-x` → 5
+* `r-x` → 5
+
+So:
+
+```bash
+755
+```
+
+### Memory Trick
+
+Think:
+
+* `r` = biggest permission → `4`
+* `w` = medium permission → `2`
+* `x` = smallest permission → `1`
+
+Then just add the values.
 
 ## 🛠️ System Update & Software
 
