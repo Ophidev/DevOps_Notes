@@ -886,103 +886,704 @@ cat dev_file.txt
 
 ---
 
-## 📝 6️⃣ grep (Global Regular Expression Print)
 
-* Search for string/pattern in file(s):
+# 📝 6️⃣ grep (Global Regular Expression Print)
+
+## 📌 Definition
+
+`grep` is a Linux command used to search specific text, patterns, or strings inside files and directories.
+
+Very important in:
+
+* DevOps
+* Log analysis
+* Monitoring
+* CI/CD
+* Debugging
+* Linux administration
+
+---
+
+# 🧠 Easy Understanding
+
+```text
+grep = search engine for text inside Linux
+```
+
+---
+
+# 📌 Basic Syntax
 
 ```bash
-# Recursive search in folder
-grep -r "devops" /home
+grep "pattern" file
+```
 
-# Search in a specific file
+---
+
+# 📌 Search in Specific File
+
+```bash
 grep "devops" /home/aditya-dev/dev_files/dev_file.txt
+```
 
-# Case-insensitive search
+Searches:
+
+* word `devops`
+* inside specific file
+
+---
+
+# 📌 Recursive Search
+
+```bash
+grep -r "devops" /home
+```
+
+## Breakdown
+
+| Option | Meaning          |
+| ------ | ---------------- |
+| `-r`   | recursive search |
+
+Searches:
+
+* all folders
+* subfolders
+* files recursively
+
+---
+
+# 📌 Case Insensitive Search
+
+```bash
 grep -ri "devops" /home/aditya-dev/dev_files
 ```
 
-✅ **Tip:** Use grep to check if a user exists:
+## Breakdown
+
+| Option | Meaning          |
+| ------ | ---------------- |
+| `-r`   | recursive        |
+| `-i`   | case insensitive |
+
+Matches:
+
+* DevOps
+* DEVOPS
+* devops
+
+---
+
+# 📌 Show Line Numbers
+
+```bash
+grep -n "ERROR" logs.txt
+```
+
+Example output:
+
+```text
+2:ERROR DB Failed
+5:ERROR Login Failed
+```
+
+`-n` → show line numbers.
+
+---
+
+# 📌 Invert Match
+
+```bash
+grep -v "INFO" logs.txt
+```
+
+Shows lines NOT containing INFO.
+
+---
+
+# 📌 Count Matching Lines
+
+```bash
+grep -c "ERROR" logs.txt
+```
+
+Counts total matching lines.
+
+---
+
+# 📌 Match Exact Word
+
+```bash
+grep -w "devops" file.txt
+```
+
+Avoids partial matches.
+
+Example:
+
+* matches `devops`
+* not `devops123`
+
+---
+
+# 📌 Show Only Matching Filenames
+
+```bash
+grep -l "ERROR" *.log
+```
+
+Shows filenames containing ERROR.
+
+---
+
+# 📌 Using grep with Pipe `|`
+
+```bash
+ps aux | grep nginx
+```
+
+Search running nginx processes.
+
+VERY common DevOps command.
+
+---
+
+# 📌 Check User Exists
 
 ```bash
 sudo grep aditya-dev /etc/passwd
 ```
 
+Search user entry inside passwd file.
+
 ---
 
-## 📝 7️⃣ find Command
+# 📌 Real DevOps Examples
 
-* Find files based on conditions:
+## Search Errors
 
 ```bash
-# Example: find files with 777 permissions
-find /home -type f -perm 777
-
-# Example : Find files ending with .log:**
-
-find /home -type f -name "*.log"
-
+grep "ERROR" app.log
 ```
 
-* Useful for locating files quickly.
+---
+
+## Search Docker Containers
+
+```bash
+docker ps | grep nginx
+```
 
 ---
 
-## 📝 8️⃣ Log Files & awk
-
-* Log files contain system/app info.
-* `awk` → Powerful tool to **filter, format, extract** data.
+## Search Environment Variables
 
 ```bash
-# Print ERROR lines with row number and specific columns
+env | grep PATH
+```
+
+---
+
+# 🚨 grep Interview Questions
+
+## Q1: Difference between grep and find?
+
+| Command | Purpose                  |
+| ------- | ------------------------ |
+| `grep`  | search text inside files |
+| `find`  | search files/directories |
+
+---
+
+## Q2: What does `-r` mean?
+
+Recursive search.
+
+---
+
+## Q3: What does `-i` mean?
+
+Case-insensitive search.
+
+---
+
+# 🧠 Easy Memory
+
+```text
+grep = search text/pattern
+```
+
+---
+
+# 📝 7️⃣ find Command
+
+# 📌 Definition
+
+`find` is a Linux command used to search files and directories based on conditions like:
+
+* name
+* size
+* permissions
+* owner
+* modification time
+
+Very important in:
+
+* DevOps
+* log cleanup
+* security auditing
+* file management
+* automation
+
+---
+
+# 🧠 Easy Understanding
+
+```text
+find = locate files/folders
+```
+
+---
+
+# 📌 Basic Syntax
+
+```bash
+find [path] [condition]
+```
+
+---
+
+# 📌 Find Files with 777 Permissions
+
+```bash
+find /home -type f -perm 777
+```
+
+## Breakdown
+
+| Option      | Meaning           |
+| ----------- | ----------------- |
+| `-type f`   | only files        |
+| `-perm 777` | permission filter |
+
+Very useful for:
+
+* security audits
+* insecure file detection
+
+---
+
+# 📌 Find `.log` Files
+
+```bash
+find /home -type f -name "*.log"
+```
+
+Searches all `.log` files.
+
+---
+
+# 📌 File Types
+
+| Option    | Meaning   |
+| --------- | --------- |
+| `-type f` | file      |
+| `-type d` | directory |
+
+---
+
+# 📌 Find Directories
+
+```bash
+find /home -type d -name "project"
+```
+
+---
+
+# 📌 Find Large Files
+
+```bash
+find /var/log -size +100M
+```
+
+Find files larger than 100MB.
+
+---
+
+# 📌 Find Small Files
+
+```bash
+find /tmp -size -1M
+```
+
+Find files smaller than 1MB.
+
+---
+
+# 📌 Find by User
+
+```bash
+find /home -user aditya
+```
+
+Search files owned by user.
+
+---
+
+# 📌 Find by Group
+
+```bash
+find /home -group devops
+```
+
+---
+
+# 📌 Find Recently Modified Files
+
+```bash
+find /logs -mtime -7
+```
+
+Files modified within last 7 days.
+
+---
+
+# 📌 Find Old Files
+
+```bash
+find /logs -mtime +30
+```
+
+Files older than 30 days.
+
+---
+
+# 📌 Find Empty Files
+
+```bash
+find /tmp -empty
+```
+
+---
+
+# 📌 Execute Command on Found Files
+
+```bash
+find /home -name "*.log" -exec rm {} \\;
+```
+
+## Breakdown
+
+| Part    | Meaning            |
+| ------- | ------------------ |
+| `-exec` | execute command    |
+| `{}`    | current file       |
+| `\\;`   | command terminator |
+
+VERY powerful and dangerous.
+
+---
+
+# 📌 Delete Found Files
+
+```bash
+find /tmp -name "*.tmp" -delete
+```
+
+---
+
+# 📌 Real DevOps Examples
+
+## Find Large Logs
+
+```bash
+find /var/log -size +1G
+```
+
+---
+
+## Find Permission Issues
+
+```bash
+find / -perm 777
+```
+
+---
+
+## Cleanup Old Logs
+
+```bash
+find /logs -mtime +30 -delete
+```
+
+---
+
+# 🚨 find Interview Questions
+
+## Q1: Difference between grep and find?
+
+| Command | Purpose      |
+| ------- | ------------ |
+| `grep`  | search text  |
+| `find`  | search files |
+
+---
+
+## Q2: What does `-exec` do?
+
+Executes command on matched files.
+
+---
+
+## Q3: What does `-mtime` mean?
+
+Modification time filter.
+
+---
+
+# 🧠 Easy Memory
+
+```text
+find = locate/search files
+```
+
+---
+
+# 📝 8️⃣ awk Command
+
+# 📌 Definition
+
+`awk` is a powerful Linux text-processing tool used to:
+
+* filter
+* format
+* extract
+* analyze structured text data
+
+Very important for:
+
+* logs
+* CSV files
+* monitoring
+* DevOps automation
+
+---
+
+# 🧠 Easy Understanding
+
+```text
+awk = mini programming language for text
+```
+
+---
+
+# 📌 awk Works Column-Wise
+
+Example file:
+
+```text
+Aditya DevOps 50000
+Ayush Backend 60000
+Rohit Frontend 45000
+```
+
+| Column | Meaning       |
+| ------ | ------------- |
+| `$1`   | first column  |
+| `$2`   | second column |
+| `$3`   | third column  |
+
+---
+
+# 📌 Print Specific Columns
+
+```bash
+awk '{print $1,$3}' employee.txt
+```
+
+Output:
+
+```text
+Aditya 50000
+Ayush 60000
+Rohit 45000
+```
+
+---
+
+# 📌 Print Full Line
+
+```bash
+awk '{print $0}' file.txt
+```
+
+`$0` means entire row.
+
+---
+
+# 📌 NR (Row Number)
+
+```bash
+awk '{print NR,$1}' file.txt
+```
+
+Example:
+
+```text
+1 Aditya
+2 Ayush
+3 Rohit
+```
+
+---
+
+# 📌 NF (Number of Fields)
+
+```bash
+awk '{print NF}' file.txt
+```
+
+Prints number of columns.
+
+---
+
+# 📌 Search ERROR Logs
+
+```bash
 awk '/ERROR/ {print NR,$1,$2,$4}' log_file.txt
+```
 
-# Filter rows NR>1 && NR<10
+## Breakdown
+
+| Part       | Meaning            |
+| ---------- | ------------------ |
+| `/ERROR/`  | filter ERROR lines |
+| `NR`       | row number         |
+| `$1,$2,$4` | selected columns   |
+
+---
+
+# 📌 Filter Rows by Condition
+
+```bash
 awk 'NR>1 && NR<10 && /ERROR/ {print NR}' log_file.txt
+```
 
-# Save filtered output
+Meaning:
+
+* rows between 1 and 10
+* containing ERROR
+
+---
+
+# 📌 Save Filtered Output
+
+```bash
 touch Error_upto_50.txt
+
 awk 'NR>0 && NR<51 && /ERROR/ {print NR,$1,$2,$4,$5,$6}' log_file.txt > Error_upto_50.txt
 ```
 
-* `NR` → Number of the row
-* `$1, $2, $3...` → Columns
-
 ---
 
-## 📊 Diagram: User & Group Permissions
+# 📌 BEGIN Block
 
-```mermaid
-flowchart TD
-    A[User aditya-dev] --> B[Home Directory /home/aditya-dev]
-    B --> C[File dev_file.txt]
-    C -->|Owner Permission| D[rwx]
-    C -->|Group Permission| E[r-x]
-    C -->|Other Users| F[---]
-    G[ACL] --> C
-    G --> H[User aditya rwx access]
+```bash
+awk 'BEGIN {print "Start"} {print $1}' file.txt
 ```
 
-✨ **Tip:** Think of ACL as a “VIP pass” — it grants specific users access without changing ownership.
+Runs before processing.
 
 ---
 
-## 📌 Summary Tips
+# 📌 END Block
 
-* **User management:** `useradd`, `passwd`, `su`
-* **Groups:** `groupadd`, `gpasswd -a/-M`
-* **Sudo:** `/etc/sudoers`, group permissions
-* **Permissions:** `chmod`, numbers 0-7
-* **ACL:** `getfacl`, `setfacl`
-* **Search & logs:** `grep`, `find`, `awk`
-* Always reboot after major permission changes: `sudo reboot` 🔄
+```bash
+awk 'END {print NR}' file.txt
+```
+
+Print total rows after processing.
 
 ---
 
-## 🖼️ Image Placeholders
+# 📌 Count Total Lines
 
-* ![Insert Image Here](image_placeholder.png) – For screenshots or board notes
-* ![Insert Image Here](image_placeholder.png) – Postman / Terminal screenshots
+```bash
+awk 'END {print NR}' file.txt
+```
 
 ---
 
+# 📌 Real DevOps Examples
+
+## Extract IP Addresses
+
+```bash
+awk '{print $1}' access.log
+```
+
+---
+
+## Extract CPU Usage
+
+```bash
+top | awk '{print $1,$9}'
+```
+
+---
+
+## Analyze Error Logs
+
+```bash
+awk '/ERROR/' app.log
+```
+
+---
+
+# 🚨 awk Interview Questions
+
+## Q1: Difference between grep and awk?
+
+| Command | Purpose              |
+| ------- | -------------------- |
+| `grep`  | search text          |
+| `awk`   | process/extract text |
+
+---
+
+## Q2: What is `$1` in awk?
+
+First column.
+
+---
+
+## Q3: What is `NR`?
+
+Current row number.
+
+---
+
+## Q4: What is `$0`?
+
+Entire row/line.
+
+---
+
+# 🧠 Easy Memory
+
+```text
+grep → searching
+find → locating
+awk → analyzing text
+```
+
+---
+
+# ⭐ MOST IMPORTANT FINAL UNDERSTANDING
+
+| Command | Main Job                 |
+| ------- | ------------------------ |
+| `grep`  | search text/pattern      |
+| `find`  | search files/directories |
+| `awk`   | process structured text  |
 
