@@ -49,11 +49,13 @@ This means `systemd` manages these services.
 
 Think of `systemd` as the **manager of all background processes (daemons)**.
 
+- `systemd` is the init system and service manager in modern Linux distributions. It runs as PID 1, meaning it is the first userspace process started by the Linux kernel during boot. It is responsible for starting, managing, and monitoring system and application background services (daemons).
 ---
 
 ### ⚙️ What is systemctl?
 
 `systemctl` is the **command-line tool** used to control and manage `systemd`.
+`systemctl` is the **command-line tool** used to control and manage `systemd` services and units.
 
 #### Common Commands
 
