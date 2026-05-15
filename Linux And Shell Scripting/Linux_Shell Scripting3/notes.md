@@ -55,7 +55,8 @@ Think of `systemd` as the **manager of all background processes (daemons)**.
 ### ⚙️ What is systemctl?
 
 `systemctl` is the **command-line tool** used to control and manage `systemd`.
-`systemctl` is the **command-line tool** used to control and manage `systemd` services and units.
+
+- `systemctl` is the **command-line tool** used to control and manage `systemd` services and units.
 
 #### Common Commands
 
