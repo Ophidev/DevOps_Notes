@@ -85,7 +85,7 @@ ssh -T git@github-second
 Expected output:
 
 ```
-Hi AdityaBhatt37! You've successfully authenticated, but GitHub does not provide shell access.
+Hi ophidBhatt37! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 > SSH test for Account A will fail (Permission denied) because it uses HTTPS.
@@ -114,7 +114,7 @@ git clone git@github-second:usernameB/repo.git
 
 ```powershell
 cd repo-for-accountB
-git config user.name "Aditya Bhatt"
+git config user.name "ophid Bhatt"
 git config user.email "bhattadi60@gmail.com"
 ```
 
@@ -129,20 +129,20 @@ If you already have a local project and want to push it to Account B:
 ```powershell
 cd path\to\your\project
 git init  # if not already a Git repo
-git config user.name "Aditya Bhatt"
+git config user.name "ophid Bhatt"
 git config user.email "bhattadi60@gmail.com"
 ```
 
 2. **Add the remote using SSH alias**:
 
 ```powershell
-git remote add origin git@github-second:AdityaBhatt37/repo-name.git
+git remote add origin git@github-second:ophidBhatt37/repo-name.git
 ```
 
 * If a remote already exists:
 
 ```powershell
-git remote set-url origin git@github-second:AdityaBhatt37/repo-name.git
+git remote set-url origin git@github-second:ophidBhatt37/repo-name.git
 ```
 
 3. **Add and commit files**:

@@ -19,10 +19,10 @@ In this lecture, we are going to learn about the following topics:
 ### Creating a New User
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ whoami
-aditya
+ophid@MORK:/mnt/h/MORK/ophidubantu$ whoami
+ophid
 
-aditya@MORK:/mnt/h/MORK/adityaubantu$ useradd ayush-dev -m
+ophid@MORK:/mnt/h/MORK/ophidubantu$ useradd ayush-dev -m
 useradd: Permission denied.
 useradd: cannot lock /etc/passwd; try again later.
 ````
@@ -70,12 +70,12 @@ exit
 ### Creating Multiple Users
 
 ```bash
-sudo useradd aditya-dev
-sudo passwd aditya-dev
-sudo useradd aditya-tester
-sudo passwd aditya-tester
-sudo useradd aditya-devops
-sudo passwd aditya-devops
+sudo useradd ophid-dev
+sudo passwd ophid-dev
+sudo useradd ophid-tester
+sudo passwd ophid-tester
+sudo useradd ophid-devops
+sudo passwd ophid-devops
 ```
 
 * Use `sudo cat /etc/passwd` to see all users.
@@ -98,13 +98,13 @@ sudo cat /etc/group
 
 ```bash
 # Add a single user
-sudo gpasswd -a aditya-dev devops
+sudo gpasswd -a ophid-dev devops
 
 # Add multiple users (overwrites group members)
-sudo gpasswd -M aditya-devops,ayush-dev devops
+sudo gpasswd -M ophid-devops,ayush-dev devops
 
 # Append users without overwriting
-sudo gpasswd -a aditya devops
+sudo gpasswd -a ophid devops
 ```
 
 **Tip:** Use `-a` to append users. Use `-M` carefully — it overwrites existing members.
@@ -112,7 +112,7 @@ sudo gpasswd -a aditya devops
 **Current devops group:**
 
 ```
-devops:x:1005:aditya-dev,ayush-dev,aditya-devops,aditya
+devops:x:1005:ophid-dev,ayush-dev,ophid-devops,ophid
 ```
 
 ---
@@ -185,7 +185,7 @@ ls -la
 Output:
 
 ```bash
--rw-rw-r-- 1 aditya-dev developers 0 May 14 dev_file.txt
+-rw-rw-r-- 1 ophid-dev developers 0 May 14 dev_file.txt
 ```
 
 ---
@@ -193,7 +193,7 @@ Output:
 # 🔍 Breakdown of Output
 
 ```text
--rw-rw-r-- 1 aditya-dev developers 0 May 14 dev_file.txt
+-rw-rw-r-- 1 ophid-dev developers 0 May 14 dev_file.txt
 ```
 
 | Part           | Meaning            |
@@ -203,7 +203,7 @@ Output:
 | `rw-`          | Group permissions  |
 | `r--`          | Others permissions |
 | `1`            | Hard links         |
-| `aditya-dev`   | Owner user         |
+| `ophid-dev`   | Owner user         |
 | `developers`   | Owner group        |
 | `0`            | File size          |
 | `May 14`       | Last modified date |
@@ -468,7 +468,7 @@ chown user file
 Example:
 
 ```bash
-sudo chown aditya-dev dev_file.txt
+sudo chown ophid-dev dev_file.txt
 ```
 
 Changes file owner.
@@ -486,12 +486,12 @@ chown user:group file
 Example:
 
 ```bash
-sudo chown aditya-dev:developers dev_file.txt
+sudo chown ophid-dev:developers dev_file.txt
 ```
 
 Meaning:
 
-* owner user = aditya-dev
+* owner user = ophid-dev
 * owner group = developers
 
 ---
@@ -523,7 +523,7 @@ change group
 # 🔁 Recursive chown
 
 ```bash
-sudo chown -R aditya-dev:developers project/
+sudo chown -R ophid-dev:developers project/
 ```
 
 Recursively changes:
@@ -588,7 +588,7 @@ Very common DevOps interview topic.
 Example:
 
 ```bash
-sudo usermod -aG docker aditya-dev
+sudo usermod -aG docker ophid-dev
 ```
 
 | Part         | Meaning              |
@@ -597,7 +597,7 @@ sudo usermod -aG docker aditya-dev
 | `-a`         | append               |
 | `-G`         | supplementary groups |
 | `docker`     | group name           |
-| `aditya-dev` | username             |
+| `ophid-dev` | username             |
 
 Meaning:
 
@@ -654,15 +654,15 @@ id username
 Example:
 
 ```bash
-id aditya-dev
+id ophid-dev
 ```
 
 Output:
 
 ```bash
-uid=1000(aditya-dev)
-gid=1000(aditya-dev)
-groups=1000(aditya-dev),27(sudo),999(docker)
+uid=1000(ophid-dev)
+gid=1000(ophid-dev)
+groups=1000(ophid-dev),27(sudo),999(docker)
 ```
 
 ---
@@ -870,7 +870,7 @@ sudo apt-get install acl
 getfacl dev_file.txt
 
 # Set ACL for user
-sudo setfacl -m u:aditya:rwx dev_file.txt
+sudo setfacl -m u:ophid:rwx dev_file.txt
 ```
 
 * `getfacl` → Get current permissions.
@@ -878,11 +878,11 @@ sudo setfacl -m u:aditya:rwx dev_file.txt
 
 ```bash
 whoami
-echo "user Aditya is writing in dev_file.txt" > dev_file.txt
+echo "user ophid is writing in dev_file.txt" > dev_file.txt
 cat dev_file.txt
 ```
 
-* ACL allows `aditya` to read/write/execute without changing owner.
+* ACL allows `ophid` to read/write/execute without changing owner.
 
 ---
 
@@ -923,7 +923,7 @@ grep "pattern" file
 # 📌 Search in Specific File
 
 ```bash
-grep "devops" /home/aditya-dev/dev_files/dev_file.txt
+grep "devops" /home/ophid-dev/dev_files/dev_file.txt
 ```
 
 Searches:
@@ -956,7 +956,7 @@ Searches:
 # 📌 Case Insensitive Search
 
 ```bash
-grep -ri "devops" /home/aditya-dev/dev_files
+grep -ri "devops" /home/ophid-dev/dev_files
 ```
 
 ## Breakdown
@@ -1051,7 +1051,7 @@ VERY common DevOps command.
 # 📌 Check User Exists
 
 ```bash
-sudo grep aditya-dev /etc/passwd
+sudo grep ophid-dev /etc/passwd
 ```
 
 Search user entry inside passwd file.
@@ -1223,7 +1223,7 @@ Find files smaller than 1MB.
 # 📌 Find by User
 
 ```bash
-find /home -user aditya
+find /home -user ophid
 ```
 
 Search files owned by user.
@@ -1382,7 +1382,7 @@ awk = mini programming language for text
 Example file:
 
 ```text
-Aditya DevOps 50000
+ophid DevOps 50000
 Ayush Backend 60000
 Rohit Frontend 45000
 ```
@@ -1404,7 +1404,7 @@ awk '{print $1,$3}' employee.txt
 Output:
 
 ```text
-Aditya 50000
+ophid 50000
 Ayush 60000
 Rohit 45000
 ```
@@ -1430,7 +1430,7 @@ awk '{print NR,$1}' file.txt
 Example:
 
 ```text
-1 Aditya
+1 ophid
 2 Ayush
 3 Rohit
 ```

@@ -307,7 +307,7 @@ pipeline {
         stage ("Clone") {
             steps {
                 git branch: "master",
-                url: "https://github.com/AdityaBhatt37/FlinalProject-ObysAgency-.git"
+                url: "https://github.com/ophidBhatt37/FlinalProject-ObysAgency-.git"
             }
         }
 
@@ -586,7 +586,7 @@ pipeline {
 
                     clone(
                         "master",
-                        "https://github.com/AdityaBhatt37/FlinalProject-ObysAgency-.git"
+                        "https://github.com/ophidBhatt37/FlinalProject-ObysAgency-.git"
                     )
 
                 }

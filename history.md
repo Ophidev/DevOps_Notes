@@ -4,52 +4,52 @@
   438  chmod 777 dev_file.txt
   439  sudo chmod 777 dev_file.txt
   440  ls -la
-  441  su aditya-dev
-  442  sudo su aditya-dev
+  441  su ophid-dev
+  442  sudo su ophid-dev
   443  sudo vim /etc/sudoers
   444  sudo apt-get install acl
   445  whoami
   446  getfacl dev_files
-  447  getfacl /home/aditya-dev/dev-files
+  447  getfacl /home/ophid-dev/dev-files
   448  sudo getfacl dev_file.txt
-  449  sudo getfcl /home/aditya-dev/dev_files
-  450  sudo getfacl /home/aditya-dev/dev_files.txt
-  451  sudo getfacl /home/aditya-dev/dev_file/dev_file.txt
+  449  sudo getfcl /home/ophid-dev/dev_files
+  450  sudo getfacl /home/ophid-dev/dev_files.txt
+  451  sudo getfacl /home/ophid-dev/dev_file/dev_file.txt
   452  ls
-  453  sudo getfacl /home/aditya-dev/dev_files/dev_fiel.txt
-  454  sudo getfacl /home/aditya-dev/dev_files/dev_file.txt
+  453  sudo getfacl /home/ophid-dev/dev_files/dev_fiel.txt
+  454  sudo getfacl /home/ophid-dev/dev_files/dev_file.txt
   455  cd /
   456  whoami
-  457  # Let's give aditya user rwe permission of file dev_file.txt
-  458  sudo setfacl -m u:aditya:rwe /home/aditya-dev/dev_files/dev_file.txt
-  459  # Let's give aditya user rwe permission of file dev_file.txt
-  460  sudo setfacl -m u:aditya:rwx /home/aditya-dev/dev_files/dev_file.txt
-  461  sudo getfacl /home/aditya-dev/dev_files/dev_file.txt
+  457  # Let's give ophid user rwe permission of file dev_file.txt
+  458  sudo setfacl -m u:ophid:rwe /home/ophid-dev/dev_files/dev_file.txt
+  459  # Let's give ophid user rwe permission of file dev_file.txt
+  460  sudo setfacl -m u:ophid:rwx /home/ophid-dev/dev_files/dev_file.txt
+  461  sudo getfacl /home/ophid-dev/dev_files/dev_file.txt
   462  whoami
-  463  cat /home/aditya-dev/dev_files/dev_file.txt
-  464  touch /home/aditya-dev/dev_files/dev_files.txt
-  465  echo "user Aditya is wrting in the file dev_file.txt : Namaste file " > /home/aditya-dev/dev_files/dev_file.txt
-  466  cat /home/aditya-dev/dev_files/dev_file.txt
+  463  cat /home/ophid-dev/dev_files/dev_file.txt
+  464  touch /home/ophid-dev/dev_files/dev_files.txt
+  465  echo "user ophid is wrting in the file dev_file.txt : Namaste file " > /home/ophid-dev/dev_files/dev_file.txt
+  466  cat /home/ophid-dev/dev_files/dev_file.txt
   467  sudo reboot
   468  ddlsllal;j;lasdjf
   469  cd /
   470  whoami
-  471  cat /home/aditya-dev/dev_files/dev_file.txt
-  472  sudo vim /home/aditya-dev/dev_files/dev_file.txt
-  473  cat /home/aditya-dev/dev_files/dev_file.txt
+  471  cat /home/ophid-dev/dev_files/dev_file.txt
+  472  sudo vim /home/ophid-dev/dev_files/dev_file.txt
+  473  cat /home/ophid-dev/dev_files/dev_file.txt
   474  # Let's serach for the keywork devops
   475  grep devops /home
   476  grep -r devops /home
-  477  grep devops /home/aditya-dev/dev_files/dev_file.txt
-  478  grep -r devops /home/aditya-dev/dev_files
-  479  grep -r -i devops /home/aditya-dev/dev_files
+  477  grep devops /home/ophid-dev/dev_files/dev_file.txt
+  478  grep -r devops /home/ophid-dev/dev_files
+  479  grep -r -i devops /home/ophid-dev/dev_files
   480  grep -ri t* /home
   481  grep -ri
   482  grep -ri /
   483  history
-  484  grep -ri t* /home/aditya-dev
-  485  grep -ir t* /home/aditya-dev
-  486  sudo grep aditya-dev /etc/passwd
+  484  grep -ri t* /home/ophid-dev
+  485  grep -ir t* /home/ophid-dev
+  486  sudo grep ophid-dev /etc/passwd
   487  history
   488  histroy
   489  histry
@@ -114,16 +114,16 @@
   548  sudo groupadd qa-team
   549  sudo cat /etc/group
   550  clear
-  551  sudo gpasswd aditya,user-test
+  551  sudo gpasswd ophid,user-test
   552  whoami
-  553  sudo gpasswd -m aditya,user-test
-  554  sudo gpasswd -M aditya,user-test
+  553  sudo gpasswd -m ophid,user-test
+  554  sudo gpasswd -M ophid,user-test
   555  ls
   556  sudo cat /etc/group
-  557  sudo gpasswd -M aditya,user-test
-  558  sudo gpasswd aditya,user-test
-  559  sudo gpasswd -M aditya,user-test
-  560  sudo gpasswd -M aditya,user-test qa-team
+  557  sudo gpasswd -M ophid,user-test
+  558  sudo gpasswd ophid,user-test
+  559  sudo gpasswd -M ophid,user-test
+  560  sudo gpasswd -M ophid,user-test qa-team
   561  sudo cat /etc/group
   562  sudo vim sudoers
   563  sudo vim /etc/sudoers
@@ -169,8 +169,8 @@
   603  cd /h ome
   604  cd /home
   605  ls
-  606  cd /aditya-devops
-  607  cd ./aditya-devops/
+  606  cd /ophid-devops
+  607  cd ./ophid-devops/
   608  cd ../
   609  cd ./user-test
   610  cd ./user-test/
@@ -185,18 +185,18 @@
   619  clear
   620  whoami
   621  cd /home/
-  622  cd /aditya
-  623  cd ./aditya
+  622  cd /ophid
+  623  cd ./ophid
   624  cd ../
   625  cd ./user-test
   626  su user-test
-  627  cd aditya
+  627  cd ophid
   628  ls
-  629  cd /home/aditya/.viminfo:> /mnt/h/MORK/adityaubantu/log_file.txt
+  629  cd /home/ophid/.viminfo:> /mnt/h/MORK/ophidubantu/log_file.txt
   630  cd ../
   631  cd H:
   632  cd :H
-  633  cd /mnt/h/MORK/adityaubantu
+  633  cd /mnt/h/MORK/ophidubantu
   634  ls
   635  grep ERROR ./log_file.txt
   636  grep ERROR ./Error_upto_50.txt
@@ -226,7 +226,7 @@
   660  grep log_file.txt /
   661  grep log_file.txt /home
   662  grep -r log_file /home
-  663  cd /mnt/h/MORK/adityaubantu
+  663  cd /mnt/h/MORK/ophidubantu
   664  ls
   665  awk '/ERROR/ {print NR}' log_file.txt
   666  awk '/ERROR/ {print NR, $1, $2, $3}' log_file.txt
@@ -329,7 +329,7 @@
   763  rm -r my_scripts
   764  ls
   765  cd /
-  766  cd /home/aditya
+  766  cd /home/ophid
   767  pwd
   768  ls
   769  mkdir my_scripts
@@ -350,7 +350,7 @@
   784  chmod 700 make_folder_file.sh
   785  ls -la
   786  bash make_folder_file.sh
-  787  cd /home/aditya
+  787  cd /home/ophid
   788  ls
   789  cd my_scripts
   790  l
@@ -392,7 +392,7 @@
   826  cd /
   827  cd ~
   828  ls
-  829  cd /mnt/h/MORK/adityaubantu
+  829  cd /mnt/h/MORK/ophidubantu
   830  ls
   831  awk /ERROR/ '{print NR,$1,$2}' ./log_file.txt
   832  awk /ERROR/ '{print NR,$1,$2}' log_file.txt
@@ -537,7 +537,7 @@
   971  cd :/mnt/h/MORK/
   972  cd /mnt/h/MORK
   973  ls
-  974  cd adityaubantu
+  974  cd ophidubantu
   975  ls
   976  cd ../
   977  cd ubantu-aws-key
@@ -550,8 +550,8 @@
   984  mkdir ubantu-aws-key
   985  l
   986  cd /mnt/h/MORK/ubuntu-aws-key
-  987  cp ubantu-aws.pem /home/aditya/ubantu-aws-key
-  988  cd /home/aditya/ubantu-aws-key
+  987  cp ubantu-aws.pem /home/ophid/ubantu-aws-key
+  988  cd /home/ophid/ubantu-aws-key
   989  ls
   990  clear
   991  ls
@@ -593,11 +593,11 @@
  1027  ls
  1028  vim from_local.txt
  1029  cat from_local.txt
- 1030  scp -i /home/aditya/ubantu-aws-key/ubantu-aws.pem from_local.txt ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubantu
- 1031  scp -i /home/aditya/ubantu-aws-key/ubantu-aws/pem from_local.txt ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu
+ 1030  scp -i /home/ophid/ubantu-aws-key/ubantu-aws.pem from_local.txt ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubantu
+ 1031  scp -i /home/ophid/ubantu-aws-key/ubantu-aws/pem from_local.txt ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu
  1032  whoami
  1033  clear
- 1034  cd /home/aditya/ubantu-aws-key
+ 1034  cd /home/ophid/ubantu-aws-key
  1035  cd /practice1
  1036  cd ../
  1037  ls
@@ -605,18 +605,18 @@
  1039  clear
  1040  whoami
  1041  ls
- 1042  scp -i cd /home/aditya/ubantu-aws-key/ubantu-aws.pem from_local.txt ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu
- 1043  scp -i cd /home/aditya/ubantu-aws-key/ubantu-aws.pem from_local.txt ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu/
+ 1042  scp -i cd /home/ophid/ubantu-aws-key/ubantu-aws.pem from_local.txt ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu
+ 1043  scp -i cd /home/ophid/ubantu-aws-key/ubantu-aws.pem from_local.txt ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu/
  1044  clear
  1045  ls
  1046  cat from_local.txt
- 1047  scp -i /home/aditya/ubantu-aws-key/ubantu-aws.pem from_local.txt ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu
+ 1047  scp -i /home/ophid/ubantu-aws-key/ubantu-aws.pem from_local.txt ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu
  1048  # successfuly file copied to server
  1049  clear
  1050  # now copying a file from the server to client
  1051  whoami
- 1052  scp -i /home/aditya/ubantu-aws-key/ubantu-aws.pem ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:from_server.txt /
- 1053  scp -i /home/aditya/ubantu-aws-key/ubantu-aws.pem ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu/from_server.txt .
+ 1052  scp -i /home/ophid/ubantu-aws-key/ubantu-aws.pem ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:from_server.txt /
+ 1053  scp -i /home/ophid/ubantu-aws-key/ubantu-aws.pem ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com:/home/ubuntu/from_server.txt .
  1054  ls
  1055  cat from_server.txt
  1056  # remember (.) this dot represent current folder
@@ -640,14 +640,14 @@
  1074  s
  1075  ls
  1076  ssh -i ubantu-aws.pem ubuntu@ec2-51-21-129-16.eu-north-1.compute.amazonaws.com
- 1077  cd /home/aditya
+ 1077  cd /home/ophid
  1078  ls
  1079  cd ubantu-aws-key
  1080  ls
  1081  cd /
- 1082  cd /home/aditya/ubantu-aws-key
+ 1082  cd /home/ophid/ubantu-aws-key
  1083  cd /
- 1084  cat /home/aditya/ubantu-aws-key/ubantu-aws.pem
+ 1084  cat /home/ophid/ubantu-aws-key/ubantu-aws.pem
  1085  clear
  1086  cd /
  1087  cd ~
@@ -688,7 +688,7 @@
  1122  uptime
  1123  who
  1124  who -H
- 1125  su aditya-devops
+ 1125  su ophid-devops
  1126  -F
  1127  -h
  1128  user

@@ -112,10 +112,10 @@ exit
 ### Creating Multiple Users
 
 ```bash
-sudo useradd aditya-dev
-sudo passwd aditya-dev
-sudo useradd aditya-tester
-sudo passwd aditya-tester
+sudo useradd ophid-dev
+sudo passwd ophid-dev
+sudo useradd ophid-tester
+sudo passwd ophid-tester
 ```
 
 ---
@@ -124,8 +124,8 @@ sudo passwd aditya-tester
 
 ```bash
 sudo groupadd devops
-sudo gpasswd -a aditya-dev devops
-sudo gpasswd -M aditya-devops,ayush-dev devops
+sudo gpasswd -a ophid-dev devops
+sudo gpasswd -M ophid-devops,ayush-dev devops
 sudo cat /etc/group
 ```
 
@@ -159,7 +159,7 @@ sudo reboot
 
 ```bash
 sudo apt-get install acl
-sudo setfacl -m u:aditya:rwx dev_file.txt
+sudo setfacl -m u:ophid:rwx dev_file.txt
 getfacl dev_file.txt
 ```
 
@@ -173,7 +173,7 @@ Allows user-specific permissions without ownership changes.
 grep "devops" file.txt
 grep -r "error" /var/log/
 grep -ri "ssh" /etc/
-sudo grep aditya /etc/passwd
+sudo grep ophid /etc/passwd
 ```
 
 * `-r` = recursive
@@ -205,13 +205,13 @@ awk 'NR<51 && /ERROR/ {print NR,$1,$2,$4}' log.txt > Error_upto_50.txt
 
 ```mermaid
 flowchart TD
-    A[User aditya-dev] --> B[Home Directory /home/aditya-dev]
+    A[User ophid-dev] --> B[Home Directory /home/ophid-dev]
     B --> C[File dev_file.txt]
     C -->|Owner Permission| D[rwx]
     C -->|Group Permission| E[r-x]
     C -->|Other Users| F[---]
     G[ACL] --> C
-    G --> H[User aditya rwx access]
+    G --> H[User ophid rwx access]
 ```
 
 ---
@@ -299,7 +299,7 @@ chmod +x script.sh
 ### 🧠 Variables
 
 ```bash
-name="Aditya"
+name="ophid"
 echo "Hello $name"
 date=$(date)
 echo "Today is $date"

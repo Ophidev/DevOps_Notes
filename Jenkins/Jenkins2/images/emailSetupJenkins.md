@@ -27,3 +27,61 @@
 ![image](https://github.com/user-attachments/assets/14e254fc-1400-457e-b3f4-046404b66950)
 ![image](https://github.com/user-attachments/assets/7be70b3a-b0dc-415c-838a-b1c6fd87c182)
 ![image](https://github.com/user-attachments/assets/cffb6e1d-4838-483e-97e0-6851c204ab21)
+
+# EXAMPLE PIPELINE
+pipeline {
+    agent any;
+    stages {
+        
+        stage ("Clone") {
+            steps {
+                git branch: "master",
+                url: "https://github.com//FlinalProject"
+            }
+        }
+        
+        stage ("Trivy file system scan") {
+            steps {
+                sh "trivy fs -o results.json ."
+            }
+        }
+        
+        stage ("build") {
+            steps {
+                sh "docker build -t obys-agency:latest ."
+            }
+        }
+        
+        stage ("test") {
+            steps {
+                echo "No test cases!!"
+            }
+        }
+        
+        stage ("deploy") {
+            steps {
+                sh "docker run -d --name obys-container -p 8081:80 obys-agency:latest"
+            }
+        }
+        
+    }
+    
+    post {
+        success {
+            script {
+                emailext from: 'sender@gmail.com',
+                to: 'reciver@gmail.com',
+                body: 'Build success',
+                subject: 'Build success'
+            }
+        }
+        failure {
+            script {
+                emailext from: 'sender@gmail.com',
+                to: 'reciver@gmail.com',
+                body: 'Build failed',
+                subject: 'Build failed'
+            }
+        }
+    }
+}

@@ -171,7 +171,7 @@ Tells the system to execute the file using Bash shell.
 ### 🧠 Variables in Shell Script
 
 ```bash
-name="Aditya"
+name="ophid"
 echo "Namaste Shell Script My name is $name"
 echo "Today date is $(date)"
 ```

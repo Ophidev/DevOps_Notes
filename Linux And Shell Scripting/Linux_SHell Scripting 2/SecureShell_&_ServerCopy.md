@@ -1,4 +1,4 @@
-Perfect ✅ Thanks, Aditya!
+Perfect ✅ Thanks, ophid!
 Here’s your beautifully formatted and complete Markdown lecture notes file — based fully on your understanding, screenshots, and explanations.
 
 ---

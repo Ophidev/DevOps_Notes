@@ -23,7 +23,7 @@ A complete set of **50 practical Linux + Shell Scripting questions** designed to
 
 11. What is the **numerical permission** for `rwxr-xr-x`?
 12. Which command gives **execute permission** to the owner of `script.sh`?
-13. How do you **change ownership** of `devops.txt` to user `aditya` and group `devops`?
+13. How do you **change ownership** of `devops.txt` to user `ophid` and group `devops`?
 14. What is the **symbolic meaning** of permission `644`?
 15. How can you **grant read, write, and execute** permission to user `ayush` on file `dev_file.txt` using ACL?
 
@@ -36,7 +36,7 @@ A complete set of **50 practical Linux + Shell Scripting questions** designed to
 18. Which command lets you **switch** to another user `ayush-dev`?
 19. How do you **check your current username** in the terminal?
 20. Where are **user account details** stored in Linux?
-21. How do you **add multiple users** named `aditya-dev` and `aditya-tester`?
+21. How do you **add multiple users** named `ophid-dev` and `ophid-tester`?
 22. Which command allows you to **exit** from a switched user session?
 
 ---
@@ -44,8 +44,8 @@ A complete set of **50 practical Linux + Shell Scripting questions** designed to
 ## 👥 Section 4: Groups & Sudo
 
 23. How do you **create a group** named `devops`?
-24. How do you **add a user** `aditya-dev` to `devops` group?
-25. How can you **add multiple users** `aditya-devops` and `ayush-dev` to the `devops` group at once?
+24. How do you **add a user** `ophid-dev` to `devops` group?
+25. How can you **add multiple users** `ophid-devops` and `ayush-dev` to the `devops` group at once?
 26. Where can you **view all existing groups** in the system?
 27. How do you open the **sudoers file** safely for editing?
 28. Which line should you add to **grant sudo access** to the `devops` group?
@@ -56,7 +56,7 @@ A complete set of **50 practical Linux + Shell Scripting questions** designed to
 ## 🔑 Section 5: ACL – Access Control List
 
 30. What command installs **ACL package** on Ubuntu?
-31. How can you **grant user `aditya` rwx access** to `dev_file.txt`?
+31. How can you **grant user `ophid` rwx access** to `dev_file.txt`?
 32. How do you **check ACL permissions** for a file?
 33. Why is ACL useful compared to normal permissions?
 

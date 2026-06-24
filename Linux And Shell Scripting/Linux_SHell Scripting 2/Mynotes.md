@@ -20,9 +20,9 @@
 -> First let's create a new user -:
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ whoami
-aditya
-aditya@MORK:/mnt/h/MORK/adityaubantu$ useradd ayush-dev -m
+ophid@MORK:/mnt/h/MORK/ophidubantu$ whoami
+ophid
+ophid@MORK:/mnt/h/MORK/ophidubantu$ useradd ayush-dev -m
 useradd: Permission denied.
 useradd: cannot lock /etc/passwd; try again later.
 ```
@@ -41,9 +41,9 @@ so I tried to create a new user by using the command `useradd user_name -m(manag
 //below is the command for creation of new user and reading the content of the `/etc/passwd/` file
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ sudo useradd ayush-dev -m
-[sudo] password for aditya:
-aditya@MORK:/mnt/h/MORK/adityaubantu$ sudo cat /etc/passwd
+ophid@MORK:/mnt/h/MORK/ophidubantu$ sudo useradd ayush-dev -m
+[sudo] password for ophid:
+ophid@MORK:/mnt/h/MORK/ophidubantu$ sudo cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -71,9 +71,9 @@ systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
 uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
 landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
 polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
-aditya:x:1000:1000:,,,:/home/aditya:/bin/bash
+ophid:x:1000:1000:,,,:/home/ophid:/bin/bash
 ayush-dev:x:1001:1001::/home/ayush-dev:/bin/sh
-aditya@MORK:/mnt/h/MORK/adityaubantu$
+ophid@MORK:/mnt/h/MORK/ophidubantu$
 ```
 
 * as we can see in the `/etc/passwd` file contain the information of all the users available in this machine.
@@ -81,17 +81,17 @@ aditya@MORK:/mnt/h/MORK/adityaubantu$
 * Now I have created a new user but it does not have it's password so let's set his password for that we should be a superuser.
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ sudo passwd ayush-dev
+ophid@MORK:/mnt/h/MORK/ophidubantu$ sudo passwd ayush-dev
 New password: ayushuser
 Retype new password:
 passwd: password updated successfully
-aditya@MORK:/mnt/h/MORK/adityaubantu$
+ophid@MORK:/mnt/h/MORK/ophidubantu$
 ```
 
 // now trying to go `/home/ayush-dev/`
 
 ```bash
-aditya@MORK:/$ cd /home/ayush-dev
+ophid@MORK:/$ cd /home/ayush-dev
 -bash: cd: /home/ayush-dev: Permission denied
 ```
 
@@ -101,9 +101,9 @@ aditya@MORK:/$ cd /home/ayush-dev
 //now let's swith the user to ayush-dev using "su" command
 
 ```bash
-aditya@MORK:/$ whoami
-aditya
-aditya@MORK:/$ su ayush-dev
+ophid@MORK:/$ whoami
+ophid
+ophid@MORK:/$ su ayush-dev
 Password:
 $ whoami
 ayush-dev
@@ -120,31 +120,31 @@ $ touch dev_file.txt
 $ ls
 dev_file.txt
 $ exit
-aditya@MORK:/$ whoami
-aditya
-aditya@MORK:/$
+ophid@MORK:/$ whoami
+ophid
+ophid@MORK:/$
 ```
 
--> as you can se in the above commands I am a user `aditya` then swith to the `ayush-dev` user and when I run command `exit` I come back to the `aditya` user because this how the user management work in the linux
+-> as you can se in the above commands I am a user `ophid` then swith to the `ayush-dev` user and when I run command `exit` I come back to the `ophid` user because this how the user management work in the linux
 -> so if you start your machine and you login first using the any user and then swith to different  user and if you do `exit` you will back to the nomral user which you initily get loggedin in you machine.
 
 // Now tet's create some users
 
 ```bash
-aditya@MORK:/$ sudo useradd aditya-dev
-aditya@MORK:/$ sudo passwd aditya-dev
+ophid@MORK:/$ sudo useradd ophid-dev
+ophid@MORK:/$ sudo passwd ophid-dev
 New password:
 Retype new password:
 Sorry, passwords do not match.
 passwd: Authentication token manipulation error
 passwd: password unchanged
-aditya@MORK:/$ sudo useradd aditya-tester
-aditya@MORK:/$ sudo passwd aditya-tester
+ophid@MORK:/$ sudo useradd ophid-tester
+ophid@MORK:/$ sudo passwd ophid-tester
 New password:
 Retype new password:
 passwd: password updated successfully
-aditya@MORK:/$ sudo useradd aditya-devops
-aditya@MORK:/$ sudo passwd aditya-devops
+ophid@MORK:/$ sudo useradd ophid-devops
+ophid@MORK:/$ sudo passwd ophid-devops
 New password:
 Retype new password:
 passwd: password updated successfully
@@ -153,7 +153,7 @@ passwd: password updated successfully
 -> the file where I can get the infomoration that how many users we have created or how many users exists in this machine run commmand `sudo cat /etc/passwd/ ` in this file last you will get.
 
 ```bash
-aditya@MORK:/$ cat /etc/passwd
+ophid@MORK:/$ cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -181,12 +181,12 @@ systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
 uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
 landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
 polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
-aditya:x:1000:1000:,,,:/home/aditya:/bin/bash
+ophid:x:1000:1000:,,,:/home/ophid:/bin/bash
 ayush-dev:x:1001:1001::/home/ayush-dev:/bin/sh
-aditya-dev:x:1002:1002::/home/aditya-dev:/bin/sh
-aditya-tester:x:1003:1003::/home/aditya-tester:/bin/sh
-aditya-devops:x:1004:1004::/home/aditya-devops:/bin/sh
-aditya@MORK:/$
+ophid-dev:x:1002:1002::/home/ophid-dev:/bin/sh
+ophid-tester:x:1003:1003::/home/ophid-tester:/bin/sh
+ophid-devops:x:1004:1004::/home/ophid-devops:/bin/sh
+ophid@MORK:/$
 ```
 
 -> as we can see all the user's at the last of this file
@@ -199,16 +199,16 @@ aditya@MORK:/$
 * so linux treated all the users as a groups
 
 ```bash
-aditya@MORK:/$ groupadd devops
+ophid@MORK:/$ groupadd devops
 groupadd: Permission denied.
 groupadd: cannot lock /etc/group; try again later.
-aditya@MORK:/$ sudo groupadd devops
-aditya@MORK:/$ sudo cat /etc/group
+ophid@MORK:/$ sudo groupadd devops
+ophid@MORK:/$ sudo cat /etc/group
 root:x:0:
 daemon:x:1:
 bin:x:2:
 sys:x:3:
-adm:x:4:syslog,aditya
+adm:x:4:syslog,ophid
 tty:x:5:
 disk:x:6:
 lp:x:7:
@@ -221,12 +221,12 @@ kmem:x:15:
 dialout:x:20:
 fax:x:21:
 voice:x:22:
-cdrom:x:24:aditya
+cdrom:x:24:ophid
 floppy:x:25:
 tape:x:26:
-sudo:x:27:aditya
+sudo:x:27:ophid
 audio:x:29:
-dip:x:30:aditya
+dip:x:30:ophid
 www-data:x:33:
 backup:x:34:
 operator:x:37:
@@ -237,10 +237,10 @@ shadow:x:42:
 utmp:x:43:
 video:x:44:
 sasl:x:45:
-plugdev:x:46:aditya
+plugdev:x:46:ophid
 staff:x:50:
 games:x:60:
-users:x:100:aditya
+users:x:100:ophid
 nogroup:x:65534:
 systemd-journal:x:999:
 systemd-network:x:998:
@@ -259,13 +259,13 @@ landscape:x:105:
 polkitd:x:990:
 admin:x:106:
 netdev:x:107:
-aditya:x:1000:
+ophid:x:1000:
 ayush-dev:x:1001:
-aditya-dev:x:1002:
-aditya-tester:x:1003:
-aditya-devops:x:1004:
+ophid-dev:x:1002:
+ophid-tester:x:1003:
+ophid-devops:x:1004:
 devops:x:1005:
-aditya@MORK:/$
+ophid@MORK:/$
 ```
 
 ->so as you can see the groups at the last of this file
@@ -280,19 +280,19 @@ aditya@MORK:/$
 
 * `"-M"` -> if used means add/overwrites multiple users in the group.
 
-`aditya@MORK:/$ sudo gpasswd -a aditya-dev devops
-Adding user aditya-dev to group devops`
+`ophid@MORK:/$ sudo gpasswd -a ophid-dev devops
+Adding user ophid-dev to group devops`
 -this iis the commmand which I run
 
-// Now how to confirm that aditya-dev added to group devops or not again check the content of file `/etc/group` file
+// Now how to confirm that ophid-dev added to group devops or not again check the content of file `/etc/group` file
 
 ```bash
-aditya@MORK:/$ sudo cat /etc/group
+ophid@MORK:/$ sudo cat /etc/group
 root:x:0:
 daemon:x:1:
 bin:x:2:
 sys:x:3:
-adm:x:4:syslog,aditya
+adm:x:4:syslog,ophid
 tty:x:5:
 disk:x:6:
 lp:x:7:
@@ -305,12 +305,12 @@ kmem:x:15:
 dialout:x:20:
 fax:x:21:
 voice:x:22:
-cdrom:x:24:aditya
+cdrom:x:24:ophid
 floppy:x:25:
 tape:x:26:
-sudo:x:27:aditya
+sudo:x:27:ophid
 audio:x:29:
-dip:x:30:aditya
+dip:x:30:ophid
 www-data:x:33:
 backup:x:34:
 operator:x:37:
@@ -321,10 +321,10 @@ shadow:x:42:
 utmp:x:43:
 video:x:44:
 sasl:x:45:
-plugdev:x:46:aditya
+plugdev:x:46:ophid
 staff:x:50:
 games:x:60:
-users:x:100:aditya
+users:x:100:ophid
 nogroup:x:65534:
 systemd-journal:x:999:
 systemd-network:x:998:
@@ -343,26 +343,26 @@ landscape:x:105:
 polkitd:x:990:
 admin:x:106:
 netdev:x:107:
-aditya:x:1000:
+ophid:x:1000:
 ayush-dev:x:1001:
-aditya-dev:x:1002:
-aditya-tester:x:1003:
-aditya-devops:x:1004:
-devops:x:1005:aditya-dev
+ophid-dev:x:1002:
+ophid-tester:x:1003:
+ophid-devops:x:1004:
+devops:x:1005:ophid-dev
 
-- now as you can see that devops group after the colon it contain aditya-dev
+- now as you can see that devops group after the colon it contain ophid-dev
 ```
 
 //now adding mutliple user in a group at a time by usig the -M option but this will overrites our group memebers
 
 ```bash
-aditya@MORK:/$ sudo gpasswd -M aditya-devops,ayush-dev devops
-aditya@MORK:/$ sudo cat /etc/group
+ophid@MORK:/$ sudo gpasswd -M ophid-devops,ayush-dev devops
+ophid@MORK:/$ sudo cat /etc/group
 root:x:0:
 daemon:x:1:
 bin:x:2:
 sys:x:3:
-adm:x:4:syslog,aditya
+adm:x:4:syslog,ophid
 tty:x:5:
 disk:x:6:
 lp:x:7:
@@ -375,12 +375,12 @@ kmem:x:15:
 dialout:x:20:
 fax:x:21:
 voice:x:22:
-cdrom:x:24:aditya
+cdrom:x:24:ophid
 floppy:x:25:
 tape:x:26:
-sudo:x:27:aditya
+sudo:x:27:ophid
 audio:x:29:
-dip:x:30:aditya
+dip:x:30:ophid
 www-data:x:33:
 backup:x:34:
 operator:x:37:
@@ -391,10 +391,10 @@ shadow:x:42:
 utmp:x:43:
 video:x:44:
 sasl:x:45:
-plugdev:x:46:aditya
+plugdev:x:46:ophid
 staff:x:50:
 games:x:60:
-users:x:100:aditya
+users:x:100:ophid
 nogroup:x:65534:
 systemd-journal:x:999:
 systemd-network:x:998:
@@ -413,30 +413,30 @@ landscape:x:105:
 polkitd:x:990:
 admin:x:106:
 netdev:x:107:
-aditya:x:1000:
+ophid:x:1000:
 ayush-dev:x:1001:
-aditya-dev:x:1002:
-aditya-tester:x:1003:
-aditya-devops:x:1004:
-devops:x:1005:aditya-devops,ayush-dev
+ophid-dev:x:1002:
+ophid-tester:x:1003:
+ophid-devops:x:1004:
+devops:x:1005:ophid-devops,ayush-dev
 ```
 
--> see as you can see aditya-devops and ayush-dev is added but aditya-dev get overrite so remember while using the -M you can loss your members of gruop so add those users also while using the -M command
+-> see as you can see ophid-devops and ayush-dev is added but ophid-dev get overrite so remember while using the -M you can loss your members of gruop so add those users also while using the -M command
 
-* `" sudo gpasswd -M aditya-dev,ayush-dev,aditya-devops devops"`
+* `" sudo gpasswd -M ophid-dev,ayush-dev,ophid-devops devops"`
 
 * now added all the users.
 
 ```bash
-$ sudo gpasswd -a aditya devops
-Adding user aditya to group devops
+$ sudo gpasswd -a ophid devops
+Adding user ophid to group devops
 ```
 
-* added aditya also and `-a` will not loss the members because it appends the user.
+* added ophid also and `-a` will not loss the members because it appends the user.
 
 \###Note
 
-* `devops:x:1005:aditya-dev,ayush-dev,aditya-devops,aditya`
+* `devops:x:1005:ophid-dev,ayush-dev,ophid-devops,ophid`
 * For now what we have done created a group of devops and added  4 memebers in it
 * but for now one user can't access the another user home directory because it's his/her personal things may be their
 * So? how can a user access the home of another user?Is theire a way?
@@ -512,24 +512,24 @@ and then run command  `reboot` or `sudo reboot` this will reboot your all the pe
 // Changing the permision of the file
 
 ```bash
-aditya@MORK:/home/aditya-dev$ cd dev_files && ls
+ophid@MORK:/home/ophid-dev$ cd dev_files && ls
 dev_file.txt
-aditya@MORK:/home/aditya-dev/dev_files$
+ophid@MORK:/home/ophid-dev/dev_files$
 ```
 
-* now as you can see their is a file in a aditya-dev user I want to change the permission of that file for the User,groups,other-Users
+* now as you can see their is a file in a ophid-dev user I want to change the permission of that file for the User,groups,other-Users
 
 * for that you have to use a command change mode which is `"sudo chmod user_number group_number otherUser_number"`
 
 * their is a table for numbers which are assign to the read+write+execute permission
 
 ```bash
-aditya@MORK:/home/aditya-dev/dev_files$ ls -la
+ophid@MORK:/home/ophid-dev/dev_files$ ls -la
 total 8
-drwxrwxr-x 2 aditya-dev aditya-dev 4096 Sep 18 03:16 .
-drwxr-xr-x 3 aditya-dev aditya-dev 4096 Sep 18 03:15 ..
--rw-rw-r-- 1 aditya-dev aditya-dev    0 Sep 18 03:16 dev_file.txt
-aditya@MORK:/home/aditya-dev/dev_files$
+drwxrwxr-x 2 ophid-dev ophid-dev 4096 Sep 18 03:16 .
+drwxr-xr-x 3 ophid-dev ophid-dev 4096 Sep 18 03:15 ..
+-rw-rw-r-- 1 ophid-dev ophid-dev    0 Sep 18 03:16 dev_file.txt
+ophid@MORK:/home/ophid-dev/dev_files$
 ```
 
 -see the cureent permission of the  dev\_files
@@ -540,33 +540,33 @@ aditya@MORK:/home/aditya-dev/dev_files$
 now chagning and giving full permissions to all
 
 ```bash
- aditya@MORK:/home/aditya-dev/dev_files$ sudo su aditya-dev
+ ophid@MORK:/home/ophid-dev/dev_files$ sudo su ophid-dev
 $ pwd
-/home/aditya-dev/dev_files
+/home/ophid-dev/dev_files
 $ ls-la
 sh: 2: ls-la: not found
 $ ls -la
 total 8
-drwxrwxr-x 2 aditya-dev aditya-dev 4096 Sep 18 03:16 .
-drwxr-xr-x 3 aditya-dev aditya-dev 4096 Sep 18 03:15 ..
--rwxrwxrwx 1 aditya-dev aditya-dev    0 Sep 18 03:16 dev_file.txt
+drwxrwxr-x 2 ophid-dev ophid-dev 4096 Sep 18 03:16 .
+drwxr-xr-x 3 ophid-dev ophid-dev 4096 Sep 18 03:15 ..
+-rwxrwxrwx 1 ophid-dev ophid-dev    0 Sep 18 03:16 dev_file.txt
 $ chmod 700 dev_file.txt
 $ ls -la
 total 8
-drwxrwxr-x 2 aditya-dev aditya-dev 4096 Sep 18 03:16 .
-drwxr-xr-x 3 aditya-dev aditya-dev 4096 Sep 18 03:15 ..
--rwx------ 1 aditya-dev aditya-dev    0 Sep 18 03:16 dev_file.txt
+drwxrwxr-x 2 ophid-dev ophid-dev 4096 Sep 18 03:16 .
+drwxr-xr-x 3 ophid-dev ophid-dev 4096 Sep 18 03:15 ..
+-rwx------ 1 ophid-dev ophid-dev    0 Sep 18 03:16 dev_file.txt
 
 $ chmod 750 dev_file.txt
 $ ls -la
 total 8
-drwxrwxr-x 2 aditya-dev aditya-dev 4096 Sep 18 03:16 .
-drwxr-xr-x 3 aditya-dev aditya-dev 4096 Sep 18 03:15 ..
--rwxr-x--- 1 aditya-dev aditya-dev    0 Sep 18 03:16 dev_file.txt
+drwxrwxr-x 2 ophid-dev ophid-dev 4096 Sep 18 03:16 .
+drwxr-xr-x 3 ophid-dev ophid-dev 4096 Sep 18 03:15 ..
+-rwxr-x--- 1 ophid-dev ophid-dev    0 Sep 18 03:16 dev_file.txt
 $
 ```
 
-* at the end aditya-dev user change the permission of `dev_file.txt` to -:
+* at the end ophid-dev user change the permission of `dev_file.txt` to -:
   user-> read+write+execute = 7
   group-> read+exectue = 5
   other-users -> no permission = 0
@@ -606,11 +606,11 @@ Allow group C to execute it.
 * `"getfacl"` -> get file acess control list means permission
 
 ```bash
-aditya@MORK:/home/aditya-dev/dev_files$ sudo getfacl /home/aditya-dev/dev_files/dev_file.txt
+ophid@MORK:/home/ophid-dev/dev_files$ sudo getfacl /home/ophid-dev/dev_files/dev_file.txt
 getfacl: Removing leading '/' from absolute path names
-# file: home/aditya-dev/dev_files/dev_file.txt
-# owner: aditya-dev
-# group: aditya-dev
+# file: home/ophid-dev/dev_files/dev_file.txt
+# owner: ophid-dev
+# group: ophid-dev
 user::rwx
 group::r-x
 other::---
@@ -621,32 +621,32 @@ other::---
 //now using the ACL we can also give permission to perticular user to a perticular file by using the command -> `"setfacl -m u:user_name:rwx(permissions) /filelocation/file.txt"`
 
 ```bash
-aditya@MORK:/$ # Let's give aditya user rwe permission of file dev_file.txt
-aditya@MORK:/$ sudo setfacl -m u:aditya:rwx /home/aditya-dev/dev_files/dev_file.txt
-aditya@MORK:/$ sudo getfacl /home/aditya-dev/dev_files/dev_file.txt
+ophid@MORK:/$ # Let's give ophid user rwe permission of file dev_file.txt
+ophid@MORK:/$ sudo setfacl -m u:ophid:rwx /home/ophid-dev/dev_files/dev_file.txt
+ophid@MORK:/$ sudo getfacl /home/ophid-dev/dev_files/dev_file.txt
 getfacl: Removing leading '/' from absolute path names
-# file: home/aditya-dev/dev_files/dev_file.txt
-# owner: aditya-dev
-# group: aditya-dev
+# file: home/ophid-dev/dev_files/dev_file.txt
+# owner: ophid-dev
+# group: ophid-dev
 user::rwx
-user:aditya:rwx
+user:ophid:rwx
 group::r-x
 mask::rwx
 other::---
 ```
 
-* in above commands I have given the permission user aditya of rwx for the file dev\_file.txt and as we can see the permissions of the file their is mention of  `user:aditya:rwx` permissions.
+* in above commands I have given the permission user ophid of rwx for the file dev\_file.txt and as we can see the permissions of the file their is mention of  `user:ophid:rwx` permissions.
 
 ```bash
-aditya@MORK:/$ whoami
-aditya
-aditya@MORK:/$ echo "user Aditya is wrting in the file dev_file.txt : Namaste file " > /home/aditya-dev/dev_files/dev_file.txt
-aditya@MORK:/$ cat /home/aditya-dev/dev_files/dev_file.txt
-user Aditya is wrting in the file dev_file.txt : Namaste file
-aditya@MORK:/$
+ophid@MORK:/$ whoami
+ophid
+ophid@MORK:/$ echo "user ophid is wrting in the file dev_file.txt : Namaste file " > /home/ophid-dev/dev_files/dev_file.txt
+ophid@MORK:/$ cat /home/ophid-dev/dev_files/dev_file.txt
+user ophid is wrting in the file dev_file.txt : Namaste file
+ophid@MORK:/$
 ```
 
-* in the above commands as you can see that user aditya can write and read the content of the file dev\_files.txt
+* in the above commands as you can see that user ophid can write and read the content of the file dev\_files.txt
 
 \---> I simple way ACL make easy to get and set the permissions
 
@@ -665,32 +665,32 @@ aditya@MORK:/$
 * For searching in a perticular file `"grep Search_String_or_error /fileName.extention"`
 
 ```bash
-aditya@MORK:/$ grep -r devops /home
+ophid@MORK:/$ grep -r devops /home
 grep: /home/ayush-dev: Permission denied
-/home/aditya/.bash_history:sudo useradd aditya-devops
-/home/aditya/.bash_history:sudo passwd aditya-devops
-/home/aditya/.bash_history:groupadd devops
-/home/aditya/.bash_history:sudo groupadd devops
-/home/aditya/.bash_history:sudo gpasswd aditya-dev devops
-/home/aditya/.bash_history:sudo passwd -a aditya-dev devops
-/home/aditya/.bash_history:sudo gpasswd -a aditya-dev devops
-/home/aditya/.bash_history:sudo gpasswd -m ayush-dev aditya-devops devops
-/home/aditya/.bash_history:sudo gpasswd -m ayush-dev, aditya-devops devops
-/home/aditya/.bash_history:sudo gpasswd -M aditya-devops ayush-dev devopos
-/home/aditya/.bash_history:sudo gpasswd -M aditya-devops,ayush-dev devopos
-/home/aditya/.bash_history:sudo gpasswd -M aditya-devops,ayush-dev devops
-/home/aditya/.bash_history:sudo gpasswd -M aditya-dev, ayush-dev, aditya-devops devops
-/home/aditya/.bash_history:sudo gpasswd -M aditya-dev,ayush-dev,aditya-devops devops
-/home/aditya/.bash_history:sudo gpasswd -a aditya devops
-/home/aditya/.bash_history:sudo mkdir /home/aditya-devops
-/home/aditya/.bash_history:sudo chown aditya-devops:aditya-devops /home/aditya-devops
-/home/aditya/.bash_history:sudo chmod 755 /home/aditya-devops
-/home/aditya-dev/dev_files/dev_file.txt:devops
-aditya@MORK:/$ grep devops /home/aditya-dev/dev_files/dev_file.txt
+/home/ophid/.bash_history:sudo useradd ophid-devops
+/home/ophid/.bash_history:sudo passwd ophid-devops
+/home/ophid/.bash_history:groupadd devops
+/home/ophid/.bash_history:sudo groupadd devops
+/home/ophid/.bash_history:sudo gpasswd ophid-dev devops
+/home/ophid/.bash_history:sudo passwd -a ophid-dev devops
+/home/ophid/.bash_history:sudo gpasswd -a ophid-dev devops
+/home/ophid/.bash_history:sudo gpasswd -m ayush-dev ophid-devops devops
+/home/ophid/.bash_history:sudo gpasswd -m ayush-dev, ophid-devops devops
+/home/ophid/.bash_history:sudo gpasswd -M ophid-devops ayush-dev devopos
+/home/ophid/.bash_history:sudo gpasswd -M ophid-devops,ayush-dev devopos
+/home/ophid/.bash_history:sudo gpasswd -M ophid-devops,ayush-dev devops
+/home/ophid/.bash_history:sudo gpasswd -M ophid-dev, ayush-dev, ophid-devops devops
+/home/ophid/.bash_history:sudo gpasswd -M ophid-dev,ayush-dev,ophid-devops devops
+/home/ophid/.bash_history:sudo gpasswd -a ophid devops
+/home/ophid/.bash_history:sudo mkdir /home/ophid-devops
+/home/ophid/.bash_history:sudo chown ophid-devops:ophid-devops /home/ophid-devops
+/home/ophid/.bash_history:sudo chmod 755 /home/ophid-devops
+/home/ophid-dev/dev_files/dev_file.txt:devops
+ophid@MORK:/$ grep devops /home/ophid-dev/dev_files/dev_file.txt
 devops
-aditya@MORK:/$ grep -r devops /home/aditya-dev/dev_files
-/home/aditya-dev/dev_files/dev_file.txt:devops
-aditya@MORK:/$
+ophid@MORK:/$ grep -r devops /home/ophid-dev/dev_files
+/home/ophid-dev/dev_files/dev_file.txt:devops
+ophid@MORK:/$
 ```
 
 /// above is the command of useing grep but for now we are just searching the case sensetive data means only what is typed for the searching that string or rqular expression will be found
@@ -701,9 +701,9 @@ aditya@MORK:/$
 Example -:
 
 ```bash
-aditya@MORK:/$ grep -r -i devops /home/aditya-dev/dev_files
-/home/aditya-dev/dev_files/dev_file.txt:DevOps
-/home/aditya-dev/dev_files/dev_file.txt:devops
+ophid@MORK:/$ grep -r -i devops /home/ophid-dev/dev_files
+/home/ophid-dev/dev_files/dev_file.txt:DevOps
+/home/ophid-dev/dev_files/dev_file.txt:devops
 
 see -> I search for devops I get both devops and DevOps also because now using "-i"
 ```
@@ -713,22 +713,22 @@ see -> I search for devops I get both devops and DevOps also because now using "
 Example -:
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ grep -ri t* /home/aditya-dev
-/home/aditya-dev/dev_files/dev_file.txt:user Aditya is wrting in the file dev_file.txt : Namaste file
-/home/aditya-dev/dev_files/dev_file.txt:
-/home/aditya-dev/dev_files/dev_file.txt:DevOps
-/home/aditya-dev/dev_files/dev_file.txt:
-/home/aditya-dev/dev_files/dev_file.txt:devops
+ophid@MORK:/mnt/h/MORK/ophidubantu$ grep -ri t* /home/ophid-dev
+/home/ophid-dev/dev_files/dev_file.txt:user ophid is wrting in the file dev_file.txt : Namaste file
+/home/ophid-dev/dev_files/dev_file.txt:
+/home/ophid-dev/dev_files/dev_file.txt:DevOps
+/home/ophid-dev/dev_files/dev_file.txt:
+/home/ophid-dev/dev_files/dev_file.txt:devops
 ```
 
 * A question that if you have to confirm that the user is created is confirmed or not ?
 * solution -> grep the userName in the `/etc/passwd` file
 
 ```bash
- aditya@MORK:/mnt/h/MORK/adityaubantu$ sudo grep aditya-dev /etc/passwd
-[sudo] password for aditya:
-aditya-dev:x:1002:1002::/home/aditya-dev:/bin/sh
-aditya-devops:x:1004:1004::/home/aditya-devops:/bin/sh
+ ophid@MORK:/mnt/h/MORK/ophidubantu$ sudo grep ophid-dev /etc/passwd
+[sudo] password for ophid:
+ophid-dev:x:1002:1002::/home/ophid-dev:/bin/sh
+ophid-devops:x:1004:1004::/home/ophid-devops:/bin/sh
 ```
 
 ### Now the "find" command
@@ -758,7 +758,7 @@ or
 // below is the command for searching the Error word in the log\_file.txt and printing Number of rows with col1, col2, col4
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ awk '/ERROR/ {print NR,$1,$2,$4}' log_file.txt
+ophid@MORK:/mnt/h/MORK/ophidubantu$ awk '/ERROR/ {print NR,$1,$2,$4}' log_file.txt
 2 2025-09-18 10:00:05 (pid
 5 2025-09-18 10:00:20 (pid
 7 2025-09-18 10:00:30 (pid
@@ -796,7 +796,7 @@ aditya@MORK:/mnt/h/MORK/adityaubantu$ awk '/ERROR/ {print NR,$1,$2,$4}' log_file
 then the command will be -:
 
 ```bash
-'aditya@MORK:/mnt/h/MORK/adityaubantu$ awk 'NR>1 && NR<10 && /ERROR/ {print NR}' log_file.txt
+'ophid@MORK:/mnt/h/MORK/ophidubantu$ awk 'NR>1 && NR<10 && /ERROR/ {print NR}' log_file.txt
 2
 5
 7
@@ -806,7 +806,7 @@ then the command will be -:
 * one more example with the specefic column getting
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ awk 'NR>1 && NR<20 && /ERROR/ {print NR,$1,$3,$4}' log_file.txt
+ophid@MORK:/mnt/h/MORK/ophidubantu$ awk 'NR>1 && NR<20 && /ERROR/ {print NR,$1,$3,$4}' log_file.txt
 2 2025-09-18 [ERROR] (pid
 5 2025-09-18 [ERROR] (pid
 7 2025-09-18 [ERROR] (pid
@@ -818,10 +818,10 @@ aditya@MORK:/mnt/h/MORK/adityaubantu$ awk 'NR>1 && NR<20 && /ERROR/ {print NR,$1
 //BElow is the good example of && operator
 
 ```bash
-aditya@MORK:/mnt/h/MORK/adityaubantu$ touch Error_upto_50.txt && awk 'NR>0 && NR<51 && /ERROR/ {print NR,$1,$2,$4,$5,$6}' log_file.txt > Error_upto_50.txt
-aditya@MORK:/mnt/h/MORK/adityaubantu$ ls
+ophid@MORK:/mnt/h/MORK/ophidubantu$ touch Error_upto_50.txt && awk 'NR>0 && NR<51 && /ERROR/ {print NR,$1,$2,$4,$5,$6}' log_file.txt > Error_upto_50.txt
+ophid@MORK:/mnt/h/MORK/ophidubantu$ ls
 Error_upto_50.txt  log_file.txt
-aditya@MORK:/mnt/h/MORK/adityaubantu$ cat Error_upto_50.txt
+ophid@MORK:/mnt/h/MORK/ophidubantu$ cat Error_upto_50.txt
 2 2025-09-18 10:00:05 (pid 9876): File
 5 2025-09-18 10:00:20 (pid 3456): Connection
 7 2025-09-18 10:00:30 (pid 1122): Database

@@ -81,7 +81,7 @@ This file contains **detailed answers and explanations** for all 50 DevOps pract
 13. **Change ownership:**
 
     ```bash
-    chown aditya:devops devops.txt
+    chown ophid:devops devops.txt
     ```
 
 14. **Permission 644 meaning:**
@@ -129,8 +129,8 @@ This file contains **detailed answers and explanations** for all 50 DevOps pract
 21. **Add multiple users:**
 
     ```bash
-    useradd aditya-dev
-    useradd aditya-tester
+    useradd ophid-dev
+    useradd ophid-tester
     ```
 
 22. **Exit from switched user:**
@@ -152,13 +152,13 @@ This file contains **detailed answers and explanations** for all 50 DevOps pract
 24. **Add user to group:**
 
     ```bash
-    usermod -aG devops aditya-dev
+    usermod -aG devops ophid-dev
     ```
 
 25. **Add multiple users to group:**
 
     ```bash
-    usermod -aG devops aditya-devops
+    usermod -aG devops ophid-devops
     usermod -aG devops ayush-dev
     ```
 
@@ -199,7 +199,7 @@ This file contains **detailed answers and explanations** for all 50 DevOps pract
 31. **Grant user rwx access:**
 
     ```bash
-    setfacl -m u:aditya:rwx dev_file.txt
+    setfacl -m u:ophid:rwx dev_file.txt
     ```
 
 32. **Check ACL permissions:**

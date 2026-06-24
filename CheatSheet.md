@@ -313,7 +313,7 @@ scp -i key.pem ubuntu@server:/home/ubuntu/file.txt .
 ### Variables
 
 ```bash
-name="Aditya"
+name="ophid"
 
 echo $name
 ```

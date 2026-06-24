@@ -276,7 +276,7 @@ sudo apt install nginx
 | ---------------- | ------------------------- | ---------------------- |
 | `mkdir folder`   | Create folder             | `mkdir project`        |
 | `ls`             | List files                | `ls -la`               |
-| `cd path`        | Change directory          | `cd /home/aditya`      |
+| `cd path`        | Change directory          | `cd /home/ophid`      |
 | `pwd`            | Print working directory   | `pwd`                  |
 | `touch file.txt` | Create empty file         | `touch notes.txt`      |
 | `rm file.txt`    | Remove file               | `rm notes.txt`         |
@@ -371,7 +371,7 @@ ls -la
 Example output:
 
 ```
-drwxr-xr-x  2 aditya devs  4096 Sep 16 12:00 myfolder
+drwxr-xr-x  2 ophid devs  4096 Sep 16 12:00 myfolder
 ```
 
 ### Breakdown:
@@ -529,10 +529,10 @@ done
 ### 🔹 What does `~` mean?
 
 * `~` = Your **home directory**
-* For user **aditya**, it expands to:
+* For user **ophid**, it expands to:
 
 ```bash
-/home/aditya
+/home/ophid
 ```
 
 ---
@@ -540,8 +540,8 @@ done
 ### 📌 Examples
 
 ```bash
-cd ~            # Same as cd /home/aditya
-ls ~/practice1  # Same as ls /home/aditya/practice1
+cd ~            # Same as cd /home/ophid
+ls ~/practice1  # Same as ls /home/ophid/practice1
 ```
 
 ---
@@ -561,7 +561,7 @@ ls ~/practice1  # Same as ls /home/aditya/practice1
   echo ~
   ```
 
-  → Prints `/home/aditya`
+  → Prints `/home/ophid`
 
 ---
 
@@ -573,7 +573,7 @@ ls ~/practice1  # Same as ls /home/aditya/practice1
 ---
 
 ✅ In short:
-`~` is a shortcut to your **home directory** (`/home/aditya` in your case).
+`~` is a shortcut to your **home directory** (`/home/ophid` in your case).
 
 --- 
 
