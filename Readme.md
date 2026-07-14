@@ -1,11 +1,9 @@
 <!-- 🌊 Animated Header -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A604B,100:0D7C57&height=220&section=header&text=🚀%20DevOps%20Notes&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Complete%20DevOps%20Learning%20Journey&descAlignY=58&descSize=18"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A604B,100:0D7C57&height=220&section=header&text=%20DevOps%20Notes&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Complete%20DevOps%20Learning%20Journey&descAlignY=58&descSize=18"/>
 </p>
 
 <div align="center">
-
-# 🚀 DevOps Notes
 
 ### *A Complete DevOps Learning Repository*
 
