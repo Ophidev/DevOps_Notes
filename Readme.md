@@ -1,15 +1,10 @@
-<!-- 🌊 Animated Header -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A604B,100:0D7C57&height=220&section=header&text=%20DevOps%20Notes&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Complete%20DevOps%20Learning%20Journey&descAlignY=58&descSize=18"/>
-</p>
-
 <div align="center">
 
 # DevOps Notes
 
 ### *A Complete DevOps Learning Repository*
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=24&pause=1200&color=0D7C57&center=true&vCenter=true&width=700&lines=Linux+%7C+Git+%7C+Docker+%7C+CI%2FCD;Kubernetes+%7C+Terraform+%7C+AWS;Monitoring+%7C+DevSecOps;Interview+Preparation+%7C+Hands-on+Learning"/>
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=24&pause=1200&color=0D7C57&center=true&vCenter=true&width=700&lines=Linux+%7C+Git+%7C+Docker+%7C+CI%2FCD;Jenkins+%7C+GitLab+CI%2FCD;Monitoring+%7C+DevSecOps;Interview+Preparation+%7C+Hands-on+Learning"/>
 
 <br>
 
@@ -58,15 +53,15 @@ The goal is to create a centralized knowledge base that I can continuously impro
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes)
 ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins)
+![GitLab](https://img.shields.io/badge/GitLab-FCA121?style=for-the-badge&logo=gitlab)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes)
 ![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform)
 ![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana)
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx)
-![DevSecOps](https://img.shields.io/badge/DevSecOps-2E8B57?style=for-the-badge)
 
 <br><br>
 
@@ -81,27 +76,29 @@ The goal is to create a centralized knowledge base that I can continuously impro
 ```text
 DevOps
 │
-├── 🐧 Linux
+├── 🐧 Linux ✅
 │
-├── 🌿 Git & GitHub
+├── 🌿 Git & GitHub ✅
 │
-├── 🐳 Docker
+├── 🐳 Docker ✅
 │
-├── ☸ Kubernetes
+├── ⚙ Jenkins ✅
 │
-├── ⚙ Jenkins
+├── 🔄 GitLab CI/CD 🚧
 │
-├── 🏗 Terraform
+├── ☸ Kubernetes ⏳
 │
-├── 🔧 Ansible
+├── 🏗 Terraform ⏳
 │
-├── ☁ AWS
+├── 🔧 Ansible ⏳
 │
-├── 📈 Monitoring
+├── ☁ AWS ⏳
+│
+├── 📈 Monitoring ⏳
 │     ├── Grafana
 │     └── Prometheus
 │
-├── 🔒 DevSecOps
+├── 🔒 DevSecOps ⏳
 │
 └── 🎯 Interview Preparation
 ```
@@ -116,8 +113,9 @@ DevOps_Notes/
 ├── Linux/
 ├── Git/
 ├── Docker/
-├── Kubernetes/
 ├── Jenkins/
+├── GitLab-CI-CD/
+├── Kubernetes/
 ├── Terraform/
 ├── Ansible/
 ├── AWS/
@@ -131,7 +129,7 @@ DevOps_Notes/
 
 # 🎯 Topics Covered
 
-## 🐧 Linux
+## ✅ 🐧 Linux
 
 - Linux Fundamentals
 - Linux Commands
@@ -146,7 +144,7 @@ DevOps_Notes/
 
 ---
 
-## 🌿 Git & GitHub
+## ✅ 🌿 Git & GitHub
 
 - Git Basics
 - Branching
@@ -159,7 +157,7 @@ DevOps_Notes/
 
 ---
 
-## 🐳 Docker
+## ✅ 🐳 Docker
 
 - Docker Basics
 - Images
@@ -172,7 +170,31 @@ DevOps_Notes/
 
 ---
 
-## ☸ Kubernetes
+## ✅ ⚙ Jenkins
+
+- Jenkins Installation
+- Jenkins Architecture
+- Freestyle Jobs
+- Declarative Pipelines
+- Scripted Pipelines
+- Plugins & Integration
+- Jenkins Security
+- Distributed Builds
+
+---
+
+## 🚧 🔄 GitLab CI/CD
+
+- GitLab Basics
+- `.gitlab-ci.yml` Configuration
+- Pipelines & Stages
+- CI/CD Best Practices
+- GitLab Runner
+- Deployment Workflows
+
+---
+
+## ⏳ ☸ Kubernetes
 
 - Pods
 - ReplicaSets
@@ -185,16 +207,29 @@ DevOps_Notes/
 
 ---
 
-## ⚙ CI/CD
+## ⏳ 🏗 Terraform
 
-- Jenkins Pipelines
-- GitHub Actions
-- CI/CD Workflow
-- Automated Deployment
+- Terraform Basics
+- HCL Syntax
+- State Management
+- Modules
+- AWS Resources
+- Best Practices
 
 ---
 
-## ☁ Cloud
+## ⏳ 🔧 Ansible
+
+- Ansible Basics
+- Playbooks
+- Roles
+- Inventory
+- Variables
+- Handlers
+
+---
+
+## ⏳ ☁ AWS
 
 - AWS Fundamentals
 - EC2
@@ -205,7 +240,7 @@ DevOps_Notes/
 
 ---
 
-## 📈 Monitoring
+## ⏳ 📈 Monitoring
 
 - Grafana
 - Prometheus
@@ -215,7 +250,7 @@ DevOps_Notes/
 
 ---
 
-## 🔒 DevSecOps
+## ⏳ 🔒 DevSecOps
 
 - OWASP
 - Trivy
@@ -231,30 +266,32 @@ DevOps_Notes/
 - ✅ Master Linux
 - ✅ Become proficient in Git & GitHub
 - ✅ Learn Docker deeply
-- ✅ Understand Kubernetes
-- ✅ Build CI/CD Pipelines
-- ✅ Learn Infrastructure as Code
-- ✅ Deploy Applications on AWS
-- ✅ Learn Monitoring & Logging
-- ✅ Understand DevSecOps
-- ✅ Prepare for DevOps Interviews
+- ✅ Understand Jenkins
+- 🚧 Continue GitLab CI/CD
+- ⏳ Understand Kubernetes
+- ⏳ Learn Infrastructure as Code
+- ⏳ Deploy Applications on AWS
+- ⏳ Learn Monitoring & Logging
+- ⏳ Understand DevSecOps
+- ⏳ Prepare for DevOps Interviews
 
 ---
 
 # 📈 Repository Progress
 
-| Module | Progress |
-|----------|-----------|
-| 🐧 Linux | 🟢 In Progress |
-| 🌿 Git | 🟢 In Progress |
-| 🐳 Docker | 🟡 Planned |
-| ☸ Kubernetes | ⚪ Upcoming |
-| ⚙ Jenkins | ⚪ Upcoming |
-| 🏗 Terraform | ⚪ Upcoming |
-| 🔧 Ansible | ⚪ Upcoming |
-| ☁ AWS | ⚪ Upcoming |
-| 📈 Monitoring | ⚪ Upcoming |
-| 🔒 DevSecOps | ⚪ Upcoming |
+| Module | Progress | Status |
+|--------|----------|--------|
+| 🐧 Linux | 🟢 Completed | ✅ Done |
+| 🌿 Git & GitHub | 🟢 Completed | ✅ Done |
+| 🐳 Docker | 🟢 Completed | ✅ Done |
+| ⚙ Jenkins | 🟢 Completed | ✅ Done |
+| 🔄 GitLab CI/CD | 🟡 In Progress | 🚧 Continuing |
+| ☸ Kubernetes | ⚪ Upcoming | ⏳ Planned |
+| 🏗 Terraform | ⚪ Upcoming | ⏳ Planned |
+| 🔧 Ansible | ⚪ Upcoming | ⏳ Planned |
+| ☁ AWS | ⚪ Upcoming | ⏳ Planned |
+| 📈 Monitoring | ⚪ Upcoming | ⏳ Planned |
+| 🔒 DevSecOps | ⚪ Upcoming | ⏳ Planned |
 
 ---
 
@@ -281,15 +318,8 @@ It motivates me to keep documenting and sharing my learning.
 
 <div align="center">
 
-##  Happy Learning!
+## Happy Learning!
 
 <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=18&pause=1000&color=0D7C57&center=true&vCenter=true&width=500&lines=Learn.;Build.;Automate.;Deploy.;Monitor.;Repeat."/>
 
-<br>
-
 </div>
-
-<!-- Footer -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0D7C57&height=120&section=footer"/>
-</p>
