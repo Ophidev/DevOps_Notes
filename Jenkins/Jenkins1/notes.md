@@ -49,6 +49,7 @@ CD is the process of taking the validated application artifact from the CI stage
 
 --- 
 *Please refer to the section above for the definition and the section below for further details.*
+
 ---
 
 # 🔁 **What is Continuous Integration (CI)?**
