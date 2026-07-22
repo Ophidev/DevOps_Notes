@@ -48,7 +48,8 @@ CD is the process of taking the validated application artifact from the CI stage
 * **Scaling & Infrastructure:** Infrastructure automatically scales application resources (CPU, RAM, server nodes) based on incoming user traffic.
 
 --- 
-### ABOVE IS DEFINATION BELOW IS JUST LOOK UP
+*Please refer to the section above for the definition and the section below for further details.*
+---
 
 # 🔁 **What is Continuous Integration (CI)?**
 
