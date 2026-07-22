@@ -15,6 +15,40 @@
 * **CI/CD = Continuous Integration + Continuous Delivery (or Continuous Deployment)**
 
 ---
+# 🔁 Continuous Integration (CI)
+
+**Definition:**  
+Continuous Integration (CI) is an automated process where developers frequently merge code changes into a central repository. Each push automatically triggers a build and a series of tests to catch bugs and vulnerabilities as early as possible.
+
+### 📌 CI Steps & Components:
+
+* **Code Commit:** Developers write code and push changes to a shared repository (e.g., Git, GitHub, GitLab).
+* **Automated Build:** The CI server automatically compiles source code and builds application packages or container images (e.g., Docker).
+* **Automated Testing & Scanning:**
+  * **Unit & Application Tests:** Verifies individual functions and core business logic.
+  * **Integration Tests:** Ensures newly integrated modules work seamlessly together.
+  * **SAST (Static Application Security Testing):** Scans source code, bytecode, or binaries for security vulnerabilities *without running the code*.
+  * **DAST (Dynamic Application Security Testing):** Analyzes the running application from the outside to find security flaws and runtime vulnerabilities.
+* **Feedback Loop:** If all checks pass, the build is marked successful. If a build or test fails, developers are immediately notified to fix the issue.
+
+---
+
+# 🚚 Continuous Delivery & Continuous Deployment (CD)
+
+**Definition:**  
+CD is the process of taking the validated application artifact from the CI stage and automatically preparing or releasing it to target staging/production environments.
+
+### 📌 CD Steps & Components:
+
+* **Environment Provisioning:** Cloud services (AWS, Azure, GCP) or orchestration platforms (Kubernetes) dynamically set up or prepare infrastructure.
+* **Automated Deployment:** The built container image or executable artifact is deployed to servers.
+* **Delivery vs. Deployment (The Key Difference):**
+  * **Continuous Delivery:** Automated pipelines prepare and test the release, but pushing to production requires **manual approval** (a human clicks "Deploy").
+  * **Continuous Deployment:** Every change that passes all CI/CD testing stages is **automatically deployed live to end users** with zero manual intervention.
+* **Scaling & Infrastructure:** Infrastructure automatically scales application resources (CPU, RAM, server nodes) based on incoming user traffic.
+
+--- 
+### ABOVE IS DEFINATION BELOW IS JUST LOOK UP
 
 # 🔁 **What is Continuous Integration (CI)?**
 
